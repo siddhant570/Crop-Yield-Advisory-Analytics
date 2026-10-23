@@ -1,0 +1,170 @@
+{% extends "base.html" %}
+
+{% block title %}About Project | Crop Yield Advisory Analytics{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <div class="page-title">
+        <h2><i class="fa-solid fa-graduation-cap"></i> About Project — Crop Yield Advisory Analytics</h2>
+        <p>College Mini-Project Technical Overview, Review 1 Scope, Dataset Dictionary, and Architecture.</p>
+    </div>
+</div>
+
+<div class="charts-grid" style="grid-template-columns: 2fr 1fr; margin-bottom: 2rem;">
+    <!-- Project Overview Card -->
+    <div class="chart-card">
+        <h3 style="color: var(--primary-color); margin-bottom: 0.8rem;">
+            <i class="fa-solid fa-bullseye"></i> Problem Statement & Course Alignment
+        </h3>
+        <p style="font-size: 0.93rem; color: #334155; margin-bottom: 1rem; line-height: 1.6;">
+            <em>"Farmers often find it difficult to understand how factors such as soil conditions, rainfall, temperature, fertilizer usage, and irrigation affect crop yield. The proposed system analyzes agricultural data and presents useful insights through analytics and visualizations to support better crop-related decisions."</em>
+        </p>
+
+        <h4 style="font-size: 0.95rem; color: var(--primary-color); margin-bottom: 0.5rem;">Pipeline Workflow:</h4>
+        <div style="background: #f0fdf4; border: 1px solid #bbf7d0; padding: 0.6rem 0.8rem; border-radius: 6px; font-size: 0.82rem; color: #166534; font-weight: 600; margin-bottom: 1rem;">
+            Data Collection &rarr; Data Cleaning &rarr; Agricultural Database &rarr; Statistical Analysis &rarr; Crop Yield Analysis &rarr; Visualization &rarr; Advisory Recommendations
+        </div>
+        <p style="font-size: 0.88rem; color: #475569; margin-bottom: 1.2rem;">
+            <em>"The collected agricultural data will first be cleaned and prepared. Important variables will then be analysed using statistical techniques and visualizations. The final results will be presented as understandable crop-yield insights."</em>
+        </p>
+
+        <h4 style="font-size: 0.95rem; color: var(--primary-color); margin-bottom: 0.5rem;">Problem Mapping with Foundational Courses:</h4>
+        <ul style="margin-left: 1.2rem; font-size: 0.88rem; color: #475569; margin-bottom: 1.2rem;">
+            <li><strong>Python</strong> &mdash; Data processing, cleaning, and analysis</li>
+            <li><strong>DBMS</strong> &mdash; Relational dataset storage and management (MySQL / SQLite fallback)</li>
+            <li><strong>Statistics</strong> &mdash; Descriptive analysis and bivariate Pearson correlation of agricultural factors</li>
+            <li><strong>Data Visualization</strong> &mdash; Graphs, charts, and executive dashboards (Chart.js)</li>
+            <li><strong>Web/Software Development</strong> &mdash; User interface and system integration (Flask Web Framework)</li>
+        </ul>
+
+        <div class="academic-note" style="margin-bottom: 0;">
+            <strong>Prototype Disclaimer:</strong> This application is an academic analytics prototype developed for a 2nd-year B.Tech AI & Data Science mini-project. It does not claim to provide scientifically validated farming advice.
+        </div>
+    </div>
+
+    <!-- Academic Metadata Card -->
+    <div class="chart-card">
+        <h3 style="color: var(--primary-color); margin-bottom: 0.8rem;">
+            <i class="fa-solid fa-book-open"></i> Project Details
+        </h3>
+        <div class="stat-row">
+            <span class="stat-label">Project Title</span>
+            <span class="stat-val" style="font-size: 0.85rem;">Crop Yield Advisory Analytics</span>
+        </div>
+        <div class="stat-row">
+            <span class="stat-label">Academic Year</span>
+            <span class="stat-val">2nd Year B.Tech</span>
+        </div>
+        <div class="stat-row">
+            <span class="stat-label">Department</span>
+            <span class="stat-val">AI & Data Science</span>
+        </div>
+        <div class="stat-row">
+            <span class="stat-label">Review Stage</span>
+            <span class="stat-val" style="color: #2d6a4f; font-weight: 700;"><i class="fa-solid fa-circle-check"></i> Complete (100%)</span>
+        </div>
+        <div class="stat-row">
+            <span class="stat-label">Backend Stack</span>
+            <span class="stat-val">Python, Flask</span>
+        </div>
+        <div class="stat-row">
+            <span class="stat-label">Statistical Methods</span>
+            <span class="stat-val">Pandas, NumPy</span>
+        </div>
+        <div class="stat-row">
+            <span class="stat-label">Database</span>
+            <span class="stat-val">MySQL / SQLite Fallback</span>
+        </div>
+        <div class="stat-row">
+            <span class="stat-label">Analysis Engine</span>
+            <span class="stat-val">Pandas, NumPy, openpyxl</span>
+        </div>
+        <div class="stat-row">
+            <span class="stat-label">Frontend</span>
+            <span class="stat-val">HTML, CSS, Chart.js</span>
+        </div>
+    </div>
+</div>
+
+<!-- Dataset Attributes Dictionary -->
+<h3 style="color: var(--primary-color); margin-bottom: 1rem;">
+    <i class="fa-solid fa-list"></i> Dataset Attribute Dictionary
+</h3>
+
+<div class="table-card" style="margin-bottom: 2rem;">
+    <div class="table-responsive">
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Field Name</th>
+                    <th>Data Type</th>
+                    <th>Unit / Format</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>id</code></td>
+                    <td>INT / AUTO_INCREMENT</td>
+                    <td>Numeric Key</td>
+                    <td>Unique identifier for agricultural record</td>
+                </tr>
+                <tr>
+                    <td><code>crop_type</code></td>
+                    <td>VARCHAR(50)</td>
+                    <td>Categorical</td>
+                    <td>Type of cultivated crop (e.g. Rice, Wheat, Maize, Cotton, Sugarcane, Pulses)</td>
+                </tr>
+                <tr>
+                    <td><code>soil</code></td>
+                    <td>VARCHAR(50)</td>
+                    <td>Categorical</td>
+                    <td>Soil classification (Alluvial, Black, Red, Clay, Loam)</td>
+                </tr>
+                <tr>
+                    <td><code>rainfall</code></td>
+                    <td>FLOAT</td>
+                    <td>Millimeters (mm)</td>
+                    <td>Seasonal precipitation / rainfall volume</td>
+                </tr>
+                <tr>
+                    <td><code>temperature</code></td>
+                    <td>FLOAT</td>
+                    <td>Degrees Celsius (°C)</td>
+                    <td>Average seasonal ambient temperature</td>
+                </tr>
+                <tr>
+                    <td><code>fertilizer</code></td>
+                    <td>FLOAT</td>
+                    <td>kg/hectare (kg/ha)</td>
+                    <td>Chemical / organic fertilizer input applied per hectare</td>
+                </tr>
+                <tr>
+                    <td><code>irrigation</code></td>
+                    <td>VARCHAR(50)</td>
+                    <td>Categorical</td>
+                    <td>Primary irrigation technique (Canal, Drip, Tube Well, Rainfed)</td>
+                </tr>
+                <tr>
+                    <td><code>yield_value</code></td>
+                    <td>FLOAT</td>
+                    <td>tons/hectare (tons/ha)</td>
+                    <td>Total crop yield output per hectare</td>
+                </tr>
+                <tr>
+                    <td><code>location</code></td>
+                    <td>VARCHAR(100)</td>
+                    <td>Geographic State</td>
+                    <td>Agricultural region / State location in India</td>
+                </tr>
+                <tr>
+                    <td><code>season</code></td>
+                    <td>VARCHAR(50)</td>
+                    <td>Cropping Season</td>
+                    <td>Agricultural season (Kharif, Rabi, Zaid)</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,301 @@
+{% extends "base.html" %}
+
+{% block title %}Module 7: Crop Yield Advisory Recommendation Engine | Crop Yield Advisory Analytics{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <div class="page-title">
+        <h2><i class="fa-solid fa-lightbulb"></i> Module 7: Advisory Recommendation System</h2>
+        <p>Scientific rule-based advisory system assessing environmental drivers, diagnosing yield stress patterns, and prescribing agronomic interventions.</p>
+    </div>
+    <div style="display: flex; gap: 0.8rem; align-items: center;">
+        <span class="status-badge badge-strong"><i class="fa-solid fa-circle-check"></i> Module 7 Fully Functional</span>
+    </div>
+</div>
+
+{% if not has_data %}
+<div class="empty-state-card">
+    <div class="empty-state-icon">
+        <i class="fa-solid fa-lightbulb"></i>
+    </div>
+    <h3 class="empty-state-title">No Dataset Loaded for Crop Advisory</h3>
+    <p class="empty-state-text">
+        Rule-based agronomic stress diagnostics, physiological thresholds, and yield health scores require an active agricultural dataset. 
+        Baseline sample datasets have been removed and nothing is shown until you provide your dataset. 
+        Please upload your dataset file (<strong>.csv</strong>, <strong>.xlsx</strong>, or <strong>.xls</strong>) in the Datasets module to diagnose crop stress and receive tailored recommendations.
+    </p>
+    <div class="empty-state-actions">
+        <a href="{{ url_for('dataset_management') }}" class="btn btn-primary" style="padding: 0.8rem 1.6rem; font-size: 1rem;">
+            <i class="fa-solid fa-cloud-arrow-up"></i> Upload Agricultural Dataset
+        </a>
+    </div>
+    <div class="empty-state-badges">
+        <span class="empty-state-badge"><i class="fa-solid fa-heart-pulse"></i> Crop Health Scoring (0–100)</span>
+        <span class="empty-state-badge"><i class="fa-solid fa-triangle-exclamation"></i> Stress Diagnostics</span>
+        <span class="empty-state-badge"><i class="fa-solid fa-prescription"></i> Agronomic Interventions</span>
+    </div>
+</div>
+{% else %}
+<!-- Main Two-Column Advisory Workspace -->
+<div class="advisory-layout-grid">
+    <!-- Left Column: Input Form -->
+    <div class="card" style="align-self: flex-start;">
+        <div class="card-header">
+            <h3><i class="fa-solid fa-sliders"></i> Agronomic & Field Parameters</h3>
+        </div>
+        <div class="card-body">
+            <div style="background: #eef6f0; border-left: 4px solid var(--primary-color); padding: 0.6rem 0.8rem; margin-bottom: 1rem; border-radius: 4px; font-size: 0.82rem; color: #2d6a4f;">
+                <i class="fa-solid fa-circle-info"></i> Pre-filled with dataset averages for <strong>{{ selected_crop }}</strong>. Adjust parameters to test different field conditions.
+            </div>
+            <form method="POST" action="{{ url_for('advisory') }}" id="advisoryForm">
+                <div class="form-group" style="margin-bottom: 1rem;">
+                    <label for="crop_type"><strong>Target Crop:</strong></label>
+                    <select name="crop_type" id="crop_type" class="form-control" onchange="location.href='{{ url_for('advisory') }}?crop=' + this.value">
+                        {% for crop in crops %}
+                            <option value="{{ crop }}" {% if selected_crop == crop %}selected{% endif %}>{{ crop }}</option>
+                        {% endfor %}
+                    </select>
+                    <small style="color: var(--text-muted); font-size: 0.78rem;">Selecting a crop automatically refreshes baseline field values.</small>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-bottom: 1rem;">
+                    <div class="form-group">
+                        <label for="soil"><strong>Soil Type:</strong></label>
+                        <select name="soil" id="soil" class="form-control">
+                            {% for s in soils %}
+                                <option value="{{ s }}" {% if selected_soil == s %}selected{% endif %}>{{ s }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="irrigation"><strong>Irrigation Method:</strong></label>
+                        <select name="irrigation" id="irrigation" class="form-control">
+                            {% for irr in irrigations %}
+                                <option value="{{ irr }}" {% if selected_irrigation == irr %}selected{% endif %}>{{ irr }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 1rem;">
+                    <label for="rainfall"><strong>Seasonal Rainfall (mm):</strong></label>
+                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                        <input type="number" step="0.1" name="rainfall" id="rainfall" class="form-control" value="{{ selected_rainfall }}" required>
+                        <span style="font-size: 0.85rem; color: var(--text-muted); white-space: nowrap;">Optimal: {{ advisory.profile.optimal_rainfall[0] }}–{{ advisory.profile.optimal_rainfall[1] }} mm</span>
+                    </div>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 1rem;">
+                    <label for="temperature"><strong>Ambient Temperature (°C):</strong></label>
+                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                        <input type="number" step="0.1" name="temperature" id="temperature" class="form-control" value="{{ selected_temperature }}" required>
+                        <span style="font-size: 0.85rem; color: var(--text-muted); white-space: nowrap;">Optimal: {{ advisory.profile.optimal_temp[0] }}–{{ advisory.profile.optimal_temp[1] }} °C</span>
+                    </div>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 1rem;">
+                    <label for="fertilizer"><strong>Fertilizer Rate (kg/ha):</strong></label>
+                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                        <input type="number" step="0.1" name="fertilizer" id="fertilizer" class="form-control" value="{{ selected_fertilizer }}" required>
+                        <span style="font-size: 0.85rem; color: var(--text-muted); white-space: nowrap;">Optimal: {{ advisory.profile.optimal_fertilizer[0] }}–{{ advisory.profile.optimal_fertilizer[1] }} kg/ha</span>
+                    </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-bottom: 1.2rem;">
+                    <div class="form-group">
+                        <label for="season"><strong>Cropping Season:</strong></label>
+                        <select name="season" id="season" class="form-control">
+                            {% for sea in seasons %}
+                                <option value="{{ sea }}" {% if selected_season == sea %}selected{% endif %}>{{ sea }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="location"><strong>Location / State:</strong></label>
+                        <input type="text" name="location" id="location" class="form-control" value="{{ selected_location }}">
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%; padding: 0.75rem; font-weight: 600;">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i> Diagnose Field & Generate Advisory
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Right Column: Live Advisory Diagnostics -->
+    <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+        <!-- Top Health Score & Yield Projection Banner -->
+        <div class="card" style="border-top: 4px solid {{ advisory.health_color }};">
+            <div class="card-body" style="padding: 1.4rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                    <div>
+                        <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.3rem;">
+                            <span class="status-badge {{ advisory.health_badge }}">{{ advisory.health_category }}</span>
+                            <span style="font-size: 0.85rem; color: var(--text-muted);"><i class="fa-solid fa-map-pin"></i> {{ advisory.location }} ({{ advisory.season }} Season)</span>
+                        </div>
+                        <h2 style="font-size: 1.5rem; color: var(--primary-color);">
+                            {{ advisory.crop_type }} Field Health Assessment
+                        </h2>
+                    </div>
+
+                    <!-- Health Score Dial -->
+                    <div style="display: flex; align-items: center; gap: 1.2rem; background: #f8fafc; padding: 0.8rem 1.4rem; border-radius: 10px; border: 1px solid var(--border-color);">
+                        <div style="text-align: center;">
+                            <div style="font-size: 2.1rem; font-weight: 800; color: {{ advisory.health_color }}; line-height: 1;">
+                                {{ advisory.health_score }}<span style="font-size: 1.1rem; font-weight: 600; color: #64748b;">/100</span>
+                            </div>
+                            <div style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; color: #64748b;">Health Index</div>
+                        </div>
+                        <div style="width: 1px; height: 40px; background: #e2e8f0;"></div>
+                        <div style="text-align: left;">
+                            <div style="font-size: 0.75rem; color: #64748b; font-weight: 600;">Yield Projection</div>
+                            <div style="font-size: 1.2rem; font-weight: 700; color: #1e293b;">
+                                {{ advisory.projected_yield }} <span style="font-size: 0.85rem; font-weight: 500;">tons/ha</span>
+                            </div>
+                            <div style="font-size: 0.72rem; color: #10b981;">
+                                Hist. Baseline: {{ advisory.avg_historical_yield }} t/ha
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stress Diagnostic Indicators -->
+        <div class="card">
+            <div class="card-header">
+                <h3><i class="fa-solid fa-stethoscope"></i> Environmental Stress Diagnostics</h3>
+            </div>
+            <div class="card-body">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem;">
+                    {% for stress in advisory.stresses %}
+                        <div style="border-radius: 8px; border: 1px solid {% if stress.severity == 'danger' %}#fca5a5{% elif stress.severity == 'warning' %}#fcd34d{% else %}#86efac{% endif %}; background: {% if stress.severity == 'danger' %}#fef2f2{% elif stress.severity == 'warning' %}#fffbeb{% else %}#f0fdf4{% endif %}; padding: 1rem;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                                <div style="font-weight: 700; font-size: 0.95rem; color: #1e293b; display: flex; align-items: center; gap: 0.4rem;">
+                                    <i class="fa-solid {{ stress.icon }}" style="color: {% if stress.severity == 'danger' %}#ef4444{% elif stress.severity == 'warning' %}#f59e0b{% else %}#10b981{% endif %};"></i>
+                                    {{ stress.type }}
+                                </div>
+                                <span class="status-badge {% if stress.severity == 'danger' %}badge-weak{% elif stress.severity == 'warning' %}badge-moderate{% else %}badge-strong{% endif %}" style="font-size: 0.72rem;">
+                                    {{ stress.status }}
+                                </span>
+                            </div>
+                            <p style="font-size: 0.84rem; color: #334155; margin-bottom: 0.5rem;">{{ stress.description }}</p>
+                            <div style="font-size: 0.78rem; font-weight: 600; color: #0f172a; border-top: 1px dashed rgba(0,0,0,0.1); padding-top: 0.4rem;">
+                                <i class="fa-solid fa-arrow-right" style="color: var(--primary-color);"></i> {{ stress.action }}
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        <!-- Actionable Agronomic Prescription Cards -->
+        <div class="card">
+            <div class="card-header">
+                <h3><i class="fa-solid fa-notes-medical"></i> Prescribed Agronomic Interventions</h3>
+            </div>
+            <div class="card-body">
+                <div style="display: flex; flex-direction: column; gap: 1rem;">
+                    {% for adv in advisory.advisories %}
+                        <div style="display: flex; gap: 1rem; padding: 1rem; background: #ffffff; border-radius: 8px; border: 1px solid var(--border-color); box-shadow: var(--shadow-sm);">
+                            <div style="width: 44px; height: 44px; border-radius: 8px; background: #e8f5e9; color: var(--primary-color); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0;">
+                                <i class="fa-solid {{ adv.icon }}"></i>
+                            </div>
+                            <div style="flex-grow: 1;">
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.2rem;">
+                                    <h4 style="font-size: 0.95rem; font-weight: 700; color: var(--primary-color);">{{ adv.title }}</h4>
+                                    <span style="font-size: 0.75rem; font-weight: 600; padding: 0.2rem 0.5rem; border-radius: 4px; background: {% if adv.priority == 'High' %}#fee2e2; color: #991b1b;{% elif adv.priority == 'Medium' %}#fef3c7; color: #92400e;{% else %}#e0e7ff; color: #3730a3;{% endif %}">
+                                        {{ adv.category }} ({{ adv.priority }} Priority)
+                                    </span>
+                                </div>
+                                <p style="font-size: 0.86rem; color: #475569; margin: 0; line-height: 1.5;">
+                                    {{ adv.detail }}
+                                </p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Dataset-Wide Crop Advisory Matrix -->
+<div class="card" style="margin-top: 2rem;">
+    <div class="card-header">
+        <h3><i class="fa-solid fa-table-cells"></i> Dataset-Wide Crop Health & Diagnostic Matrix</h3>
+    </div>
+    <div class="card-body">
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">
+            Comparative health scores and primary stress diagnosis evaluated across all crops registered in the active dataset.
+        </p>
+
+        <div class="table-responsive">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Crop Name</th>
+                        <th>Records</th>
+                        <th>Historical Yield</th>
+                        <th>Advisory Health Score</th>
+                        <th>Health Status</th>
+                        <th>Primary Stress Condition</th>
+                        <th>Prescribed Action Summary</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for c in dataset_advisories %}
+                        <tr>
+                            <td><strong>{{ c.crop }}</strong></td>
+                            <td>{{ c.record_count }}</td>
+                            <td>{{ c.avg_yield }} t/ha</td>
+                            <td>
+                                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                    <div style="width: 70px; height: 8px; background: #e2e8f0; border-radius: 4px; overflow: hidden;">
+                                        <div style="width: {{ c.health_score }}%; height: 100%; background: {% if c.health_score >= 80 %}#10b981{% elif c.health_score >= 60 %}#f59e0b{% else %}#ef4444{% endif %};"></div>
+                                    </div>
+                                    <span style="font-weight: 700; font-size: 0.82rem;">{{ c.health_score }}%</span>
+                                </div>
+                            </td>
+                            <td>
+                                <span class="status-badge {{ c.health_badge }}" style="font-size: 0.72rem;">{{ c.health_category }}</span>
+                            </td>
+                            <td>
+                                <span style="font-weight: 600; font-size: 0.8rem; color: {% if c.stress_severity == 'danger' %}#b91c1c{% elif c.stress_severity == 'warning' %}#b45309{% else %}#15803d{% endif %};">
+                                    {{ c.primary_stress }}
+                                </span>
+                            </td>
+                            <td style="font-size: 0.8rem; color: #475569; max-width: 280px;">{{ c.top_advice }}</td>
+                            <td>
+                                <a href="{{ url_for('advisory', crop=c.crop) }}" class="btn btn-secondary" style="padding: 0.25rem 0.6rem; font-size: 0.75rem;">
+                                    <i class="fa-solid fa-magnifying-glass"></i> Diagnose
+                                </a>
+                            </td>
+                        </tr>
+                    {% else %}
+                        <tr>
+                            <td colspan="8" style="text-align: center; color: var(--text-muted); padding: 2rem;">No crop records found in dataset.</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+<style>
+.advisory-layout-grid {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 1.5rem;
+}
+@media (max-width: 992px) {
+    .advisory-layout-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+{% endblock %}

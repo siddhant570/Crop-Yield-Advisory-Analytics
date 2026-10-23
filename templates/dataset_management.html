@@ -1,0 +1,233 @@
+{% extends "base.html" %}
+
+{% block title %}Dataset Management | Crop Yield Advisory Analytics{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <div class="page-title">
+        <h2><i class="fa-solid fa-cloud-arrow-up"></i> Module 1: Data Collection & Dataset Ingestion</h2>
+        <p>Collect and upload raw agricultural datasets (.csv or .xlsx) from Kaggle or Government portals with automatic column detection.</p>
+    </div>
+    <div>
+        <a href="{{ url_for('reset_datasets') }}" class="btn btn-outline" style="border-color: #ef4444; color: #b91c1c; font-size: 0.85rem; padding: 0.5rem 1rem;" onclick="return confirm('Are you sure you want to remove all uploaded datasets and clear the database?');">
+            <i class="fa-solid fa-trash-can"></i> Clear All Uploaded Datasets
+        </a>
+    </div>
+</div>
+
+<!-- Wizard Step Navigation Progress Bar (2-Step Flow) -->
+<div class="status-card" style="padding: 0.8rem 1.5rem; margin-bottom: 1.5rem;">
+    <div style="display: flex; justify-content: space-between; align-items: center; gap: 1rem;">
+        <div style="flex: 1; text-align: center;">
+            <span class="badge" style="background: {% if step == 1 %}var(--primary-color){% else %}#cbd5e1{% endif %}; color: white; padding: 0.5rem 1rem; font-size: 0.9rem; width: 100%; display: inline-block;">
+                <i class="fa-solid fa-file-arrow-up"></i> 1. Upload Dataset (.csv / .xlsx)
+            </span>
+        </div>
+        <div style="color: #94a3b8; font-size: 1.2rem;">
+            <i class="fa-solid fa-arrow-right"></i>
+        </div>
+        <div style="flex: 1; text-align: center;">
+            <span class="badge" style="background: {% if step == 2 %}var(--primary-color){% else %}#cbd5e1{% endif %}; color: white; padding: 0.5rem 1rem; font-size: 0.9rem; width: 100%; display: inline-block;">
+                <i class="fa-solid fa-clipboard-check"></i> 2. Quality Validation & Preview
+            </span>
+        </div>
+    </div>
+</div>
+
+<!-- STEP 1: UPLOAD DATASET FORM -->
+{% if step == 1 %}
+<div class="form-card">
+    <h3 style="color: var(--primary-color); margin-bottom: 1rem;">
+        <i class="fa-solid fa-cloud-arrow-up"></i> Step 1: Select Agricultural Dataset File
+    </h3>
+
+    <form action="{{ url_for('upload_dataset') }}" method="POST" enctype="multipart/form-data">
+        <div class="form-grid" style="grid-template-columns: 1fr 1fr;">
+            <div class="form-group" style="grid-column: 1 / -1;">
+                <label for="dataset_file">Select Agricultural Dataset File (.csv, .xlsx, .xls) *</label>
+                <input type="file" name="dataset_file" id="dataset_file" class="form-control" accept=".csv, .xlsx, .xls" required style="padding: 0.8rem;">
+                <small style="color: var(--text-muted);">
+                    <i class="fa-solid fa-circle-info"></i> Column headers will be automatically matched to crop yield attributes (crop, yield, rainfall, temperature, fertilizer, soil, irrigation).
+                </small>
+            </div>
+
+            <div class="form-group">
+                <label for="dataset_name">Dataset Name *</label>
+                <input type="text" name="dataset_name" id="dataset_name" class="form-control" placeholder="e.g. India Crop Yield 2026" required>
+            </div>
+
+            <div class="form-group">
+                <label for="source_name">Data Source / Provider (Optional)</label>
+                <input type="text" name="source_name" id="source_name" class="form-control" placeholder="e.g. Kaggle / ICAR">
+            </div>
+        </div>
+
+        <div style="display: flex; justify-content: flex-end; margin-top: 1.2rem;">
+            <button type="submit" class="btn btn-primary" style="padding: 0.7rem 1.5rem; font-size: 0.95rem;">
+                Upload & Auto-Clean Dataset <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </div>
+    </form>
+</div>
+
+<!-- Active Datasets List Card -->
+<div class="card" style="margin-top: 1.5rem;">
+    <div class="card-header" style="display: flex; justify-content: space-between; align-items: center;">
+        <h3 style="margin: 0; font-size: 1rem;"><i class="fa-solid fa-database"></i> Currently Active Datasets in Database</h3>
+        <span style="font-size: 0.8rem; color: var(--text-muted);">{{ dataset_sources|length }} Active Dataset(s)</span>
+    </div>
+    <div class="card-body" style="padding: 0;">
+        <table class="data-table" style="margin: 0; width: 100%;">
+            <thead>
+                <tr>
+                    <th style="width: 40px;">#</th>
+                    <th>Dataset Name</th>
+                    <th>Source Portal</th>
+                    <th>Records</th>
+                    <th>Quality Score</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for ds in dataset_sources %}
+                    <tr>
+                        <td>{{ loop.index }}</td>
+                        <td><strong>{{ ds.dataset_name }}</strong></td>
+                        <td>{{ ds.source_name }}</td>
+                        <td>{{ ds.record_count }} rows</td>
+                        <td><span class="status-badge badge-strong">{{ ds.quality_score }}%</span></td>
+                        <td><span class="badge" style="background: #e8f5e9; color: #1b4332;">{{ ds.status }}</span></td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="6" style="text-align: center; padding: 2rem; color: var(--text-muted);">
+                            <i class="fa-solid fa-folder-open" style="font-size: 1.8rem; margin-bottom: 0.5rem; display: block; color: #94a3b8;"></i>
+                            No datasets uploaded yet. Please use the form above to upload your first agricultural dataset (.csv or .xlsx).
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endif %}
+
+<!-- STEP 2: QUALITY VALIDATION, SUMMARY & CLEAN DATA PREVIEW -->
+{% if step == 2 %}
+<div class="form-card">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; border-bottom: 2px solid #e8f5e9; padding-bottom: 0.6rem;">
+        <h3 style="color: var(--primary-color);">
+            <i class="fa-solid fa-clipboard-check"></i> Step 2: Quality Validation & Data Preview
+        </h3>
+        <span class="badge {{ val_report.quality_badge_class }}" style="font-size: 0.9rem; padding: 0.4rem 0.9rem;">
+            {{ val_report.quality_status }}
+        </span>
+    </div>
+
+    <!-- Quality Score & Metrics Summary Card -->
+    <div class="metrics-grid" style="margin-bottom: 1.5rem;">
+        <div class="metric-card" style="border-left: 5px solid #2d6a4f;">
+            <div class="metric-icon" style="background: #d1e7dd;"><i class="fa-solid fa-star"></i></div>
+            <div class="metric-info">
+                <h4>Data Quality Score</h4>
+                <div class="metric-value">{{ val_report.quality_score }}%</div>
+            </div>
+        </div>
+
+        <div class="metric-card">
+            <div class="metric-icon"><i class="fa-solid fa-list-check"></i></div>
+            <div class="metric-info">
+                <h4>Total Raw Rows</h4>
+                <div class="metric-value">{{ val_report.total_rows }}</div>
+            </div>
+        </div>
+
+        <div class="metric-card">
+            <div class="metric-icon" style="background: #e0f2fe; color: #0369a1;"><i class="fa-solid fa-check"></i></div>
+            <div class="metric-info">
+                <h4>Cleaned Rows to Import</h4>
+                <div class="metric-value">{{ total_cleaned_records }}</div>
+            </div>
+        </div>
+
+        <div class="metric-card">
+            <div class="metric-icon" style="background: #fef3c7; color: #b45309;"><i class="fa-solid fa-copy"></i></div>
+            <div class="metric-info">
+                <h4>Duplicates Removed</h4>
+                <div class="metric-value">{{ val_report.duplicate_rows }}</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Detected Fields Callout -->
+    <div class="academic-note" style="margin-bottom: 1.5rem;">
+        <strong>Auto-Detected Standard Fields:</strong> <code>{{ available_fields_str }}</code>
+        <br>
+        <span style="font-size: 0.82rem; color: #475569;">
+            File: <strong>{{ filename }}</strong> ({{ row_count }} rows, {{ col_count }} columns) | Target Dataset Name: <strong>{{ dataset_name }}</strong>
+        </span>
+    </div>
+
+    <!-- Cleaned Data Preview Table -->
+    <h4 style="color: var(--primary-color); margin-bottom: 0.8rem;">
+        <i class="fa-solid fa-table"></i> Cleaned Data Preview (First 20 Records)
+    </h4>
+    <div class="table-card" style="margin-bottom: 1.5rem;">
+        <div class="table-responsive">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Crop Type</th>
+                        <th>Soil</th>
+                        <th>Rainfall (mm)</th>
+                        <th>Temp (°C)</th>
+                        <th>Fertilizer (kg/ha)</th>
+                        <th>Irrigation</th>
+                        <th>Yield (t/ha)</th>
+                        <th>Location</th>
+                        <th>Season</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in preview_rows %}
+                    <tr>
+                        <td>{{ loop.index }}</td>
+                        <td><span class="badge" style="background: #e8f5e9; color: #1b4332;">{{ row.crop_type }}</span></td>
+                        <td>{{ row.soil if row.soil else 'N/A' }}</td>
+                        <td>{{ row.rainfall if row.rainfall is not none and row.rainfall != '' else 'N/A' }}</td>
+                        <td>{{ row.temperature if row.temperature is not none and row.temperature != '' else 'N/A' }}</td>
+                        <td>{{ row.fertilizer if row.fertilizer is not none and row.fertilizer != '' else 'N/A' }}</td>
+                        <td>{{ row.irrigation if row.irrigation else 'N/A' }}</td>
+                        <td><strong style="color: #2d6a4f;">{{ row.yield_value }}</strong></td>
+                        <td>{{ row.location if row.location else 'N/A' }}</td>
+                        <td>{{ row.season if row.season else 'N/A' }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Confirm Import Form -->
+    <form action="{{ url_for('confirm_import') }}" method="POST">
+        <input type="hidden" name="cleaned_temp_path" value="{{ cleaned_temp_path }}">
+        <input type="hidden" name="dataset_name" value="{{ dataset_name }}">
+        <input type="hidden" name="source_name" value="{{ source_name }}">
+        <input type="hidden" name="source_url" value="{{ source_url }}">
+        <input type="hidden" name="quality_score" value="{{ val_report.quality_score }}">
+        <input type="hidden" name="available_fields_str" value="{{ available_fields_str }}">
+
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <a href="{{ url_for('dataset_management') }}" class="btn btn-outline">
+                <i class="fa-solid fa-arrow-left"></i> Upload Another File
+            </a>
+            <button type="submit" class="btn btn-primary" style="background-color: #2d6a4f; padding: 0.8rem 1.6rem; font-size: 1rem;">
+                <i class="fa-solid fa-file-import"></i> Confirm & Import {{ total_cleaned_records }} Records to Database
+            </button>
+        </div>
+    </form>
+</div>
+{% endif %}
+
+{% endblock %}

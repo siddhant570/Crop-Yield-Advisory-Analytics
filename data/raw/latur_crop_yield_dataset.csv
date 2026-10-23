@@ -1,0 +1,477 @@
+State_Name,Crop_Name,Season,Soil,Rainfall,Temperature,Fertilizer,Irrigation,Crop_Yield
+Maharashtra,Rabi Jowar,Rabi,Deep Black,131.8,26.3,52.8,Protective,1.45
+Maharashtra,Soybean,Kharif,Deep Black,567.6,28.3,69.9,Protective,2.07
+Maharashtra,Soybean,Kharif,Deep Black,720.0,30.3,61.0,Protective,2.08
+Maharashtra,Cotton,Kharif,Deep Black,635.9,28.4,169.2,Flood,1.88
+Maharashtra,Black Gram,Kharif,Red,491.0,32.4,27.7,Rainfed,0.79
+Maharashtra,Soybean,Kharif,Deep Black,809.2,25.6,80.3,Protective,2.29
+Maharashtra,Tomato,Kharif,Red,532.3,26.3,198.4,Drip,32.72
+Maharashtra,Rabi Jowar,Rabi,Medium Black,128.6,24.8,73.8,Rainfed,1.48
+Maharashtra,Gram,Rabi,Medium Black,75.3,18.6,50.4,Rainfed,1.55
+Maharashtra,Jowar,Kharif,Shallow Black,697.1,31.3,76.1,Rainfed,1.74
+Maharashtra,Black Gram,Kharif,Red,522.1,27.9,29.7,Rainfed,0.76
+Maharashtra,Tur,Kharif,Medium Black,597.2,31.7,78.0,Rainfed,1.31
+Maharashtra,Onion,Rabi,Red,70.9,17.6,159.7,Drip,28.45
+Maharashtra,Jowar,Kharif,Shallow Black,493.4,26.2,80.4,Rainfed,1.51
+Maharashtra,Onion,Rabi,Medium Black,98.8,27.3,214.5,Flood,27.85
+Maharashtra,Maize,Kharif,Medium Black,788.0,27.4,111.7,Rainfed,3.94
+Maharashtra,Green Gram,Kharif,Medium Black,508.5,26.7,32.7,Rainfed,0.84
+Maharashtra,Black Gram,Kharif,Red,433.9,26.0,27.9,Rainfed,0.77
+Maharashtra,Maize,Kharif,Medium Black,783.5,24.9,151.6,Rainfed,4.4
+Maharashtra,Maize,Kharif,Deep Black,635.0,25.0,151.7,Sprinkler,4.31
+Maharashtra,Tur,Kharif,Red,588.5,23.4,57.6,Rainfed,1.15
+Maharashtra,Sugarcane,Whole Year,Medium Black,892.8,25.2,391.8,Flood,109.28
+Maharashtra,Soybean,Kharif,Medium Black,568.3,24.7,71.6,Protective,2.08
+Maharashtra,Cotton,Kharif,Deep Black,625.6,28.0,148.7,Rainfed,1.67
+Maharashtra,Soybean,Kharif,Deep Black,705.7,30.5,96.1,Sprinkler,2.44
+Maharashtra,Safflower,Rabi,Medium Black,60.1,19.6,42.9,Rainfed,0.98
+Maharashtra,Tomato,Kharif,Medium Black,749.0,22.9,198.8,Flood,34.68
+Maharashtra,Black Gram,Kharif,Red,528.8,26.6,33.4,Rainfed,0.75
+Maharashtra,Cotton,Kharif,Deep Black,764.7,30.8,168.4,Drip,2.44
+Maharashtra,Sunflower,Rabi,Deep Black,76.0,30.1,70.5,Sprinkler,1.55
+Maharashtra,Tur,Kharif,Medium Black,525.8,25.9,72.1,Rainfed,1.18
+Maharashtra,Black Gram,Kharif,Medium Black,431.5,30.4,31.7,Rainfed,0.77
+Maharashtra,Wheat,Rabi,Medium Black,73.3,22.9,124.6,Sprinkler,3.14
+Maharashtra,Cotton,Kharif,Medium Black,847.2,31.3,136.4,Drip,2.43
+Maharashtra,Black Gram,Kharif,Medium Black,443.5,26.5,20.1,Rainfed,0.68
+Maharashtra,Sugarcane,Whole Year,Medium Black,947.5,30.8,309.7,Flood,109.27
+Maharashtra,Tur,Kharif,Medium Black,705.9,26.3,62.1,Rainfed,1.22
+Maharashtra,Sugarcane,Whole Year,Deep Black,680.8,24.8,267.4,Flood,95.82
+Maharashtra,Groundnut,Summer,Medium Black,132.9,31.2,52.4,Sprinkler,1.94
+Maharashtra,Bajra,Kharif,Red,508.9,33.8,47.6,Rainfed,1.27
+Maharashtra,Groundnut,Summer,Medium Black,184.3,31.6,41.6,Flood,2.07
+Maharashtra,Wheat,Rabi,Deep Black,103.4,20.7,108.0,Flood,3.03
+Maharashtra,Tur,Kharif,Red,756.9,25.3,65.4,Rainfed,1.32
+Maharashtra,Tur,Kharif,Medium Black,783.3,28.5,56.9,Drip,1.6
+Maharashtra,Bajra,Kharif,Shallow Black,410.3,31.3,43.1,Rainfed,1.29
+Maharashtra,Sugarcane,Whole Year,Deep Black,894.0,25.3,352.6,Drip,114.85
+Maharashtra,Soybean,Kharif,Medium Black,800.9,29.9,68.3,Rainfed,2.23
+Maharashtra,Groundnut,Summer,Red,98.4,28.8,55.7,Flood,2.0
+Maharashtra,Cotton,Kharif,Medium Black,814.0,28.3,145.5,Drip,2.27
+Maharashtra,Rabi Jowar,Rabi,Deep Black,114.0,21.5,73.1,Protective,1.39
+Maharashtra,Rabi Jowar,Rabi,Medium Black,106.2,25.5,56.4,Protective,1.27
+Maharashtra,Tur,Kharif,Shallow Black,794.7,26.3,76.1,Rainfed,1.42
+Maharashtra,Green Gram,Kharif,Red,617.4,28.3,39.1,Rainfed,0.79
+Maharashtra,Cotton,Kharif,Deep Black,809.2,29.0,162.9,Drip,2.39
+Maharashtra,Black Gram,Kharif,Medium Black,467.0,29.8,39.8,Rainfed,0.81
+Maharashtra,Onion,Rabi,Red,145.2,17.9,181.6,Drip,27.14
+Maharashtra,Groundnut,Summer,Red,94.9,35.6,53.2,Sprinkler,1.78
+Maharashtra,Rabi Jowar,Rabi,Medium Black,111.5,27.5,70.6,Protective,1.56
+Maharashtra,Bajra,Kharif,Red,387.7,26.5,53.3,Rainfed,1.27
+Maharashtra,Bajra,Kharif,Shallow Black,515.3,26.2,40.4,Rainfed,1.42
+Maharashtra,Onion,Rabi,Red,121.4,23.6,187.8,Drip,28.93
+Maharashtra,Jowar,Kharif,Shallow Black,617.8,31.3,62.7,Sprinkler,1.85
+Maharashtra,Cotton,Kharif,Medium Black,758.5,31.3,156.0,Drip,2.13
+Maharashtra,Groundnut,Summer,Medium Black,86.3,31.8,51.1,Drip,2.17
+Maharashtra,Maize,Kharif,Deep Black,669.6,25.3,108.1,Drip,4.54
+Maharashtra,Sunflower,Rabi,Deep Black,74.3,30.6,61.1,Sprinkler,1.48
+Maharashtra,Sunflower,Rabi,Medium Black,61.9,22.1,69.8,Sprinkler,1.56
+Maharashtra,Safflower,Rabi,Medium Black,114.6,26.3,49.5,Rainfed,1.11
+Maharashtra,Sunflower,Rabi,Deep Black,86.2,20.0,83.2,Rainfed,1.44
+Maharashtra,Sunflower,Rabi,Deep Black,92.9,27.4,67.1,Sprinkler,1.43
+Maharashtra,Gram,Rabi,Deep Black,74.3,21.6,37.6,Flood,1.51
+Maharashtra,Safflower,Rabi,Medium Black,61.1,20.3,35.1,Rainfed,0.9
+Maharashtra,Jowar,Kharif,Shallow Black,589.4,32.3,54.9,Rainfed,1.49
+Maharashtra,Green Gram,Kharif,Medium Black,571.3,27.2,25.4,Rainfed,0.75
+Maharashtra,Tur,Kharif,Medium Black,548.5,30.8,47.5,Drip,1.21
+Maharashtra,Wheat,Rabi,Deep Black,51.0,17.4,100.6,Flood,2.88
+Maharashtra,Black Gram,Kharif,Red,462.8,32.4,21.0,Rainfed,0.72
+Maharashtra,Black Gram,Kharif,Medium Black,636.9,27.5,24.2,Rainfed,0.83
+Maharashtra,Onion,Rabi,Medium Black,139.3,18.2,182.5,Flood,26.57
+Maharashtra,Maize,Kharif,Medium Black,757.9,24.5,151.9,Rainfed,4.56
+Maharashtra,Bajra,Kharif,Shallow Black,473.7,26.9,55.0,Rainfed,1.43
+Maharashtra,Green Gram,Kharif,Medium Black,447.0,31.3,34.5,Rainfed,0.77
+Maharashtra,Jowar,Kharif,Red,520.7,25.8,57.8,Sprinkler,1.64
+Maharashtra,Cotton,Kharif,Deep Black,678.4,25.4,158.1,Flood,2.14
+Maharashtra,Jowar,Kharif,Red,612.8,31.1,66.7,Rainfed,1.74
+Maharashtra,Black Gram,Kharif,Red,513.4,30.2,22.0,Rainfed,0.76
+Maharashtra,Groundnut,Summer,Medium Black,196.1,36.9,60.0,Flood,2.34
+Maharashtra,Sunflower,Rabi,Deep Black,85.7,24.6,81.6,Sprinkler,1.48
+Maharashtra,Groundnut,Summer,Red,152.8,31.1,46.5,Drip,2.17
+Maharashtra,Gram,Rabi,Deep Black,151.4,20.7,42.4,Sprinkler,1.66
+Maharashtra,Groundnut,Summer,Red,114.5,28.8,44.1,Sprinkler,1.98
+Maharashtra,Tur,Kharif,Shallow Black,732.5,24.4,56.9,Rainfed,1.2
+Maharashtra,Groundnut,Summer,Red,112.1,31.0,51.2,Drip,2.06
+Maharashtra,Wheat,Rabi,Medium Black,94.5,21.9,128.1,Flood,2.98
+Maharashtra,Bajra,Kharif,Shallow Black,472.4,27.1,49.4,Rainfed,1.36
+Maharashtra,Black Gram,Kharif,Medium Black,497.7,30.4,36.7,Rainfed,0.83
+Maharashtra,Jowar,Kharif,Medium Black,479.5,27.4,57.3,Rainfed,1.54
+Maharashtra,Cotton,Kharif,Deep Black,758.3,29.2,135.5,Flood,2.12
+Maharashtra,Tur,Kharif,Shallow Black,638.4,31.6,79.8,Rainfed,1.29
+Maharashtra,Wheat,Rabi,Medium Black,58.2,19.3,114.8,Sprinkler,3.0
+Maharashtra,Sunflower,Rabi,Medium Black,92.2,28.2,80.8,Sprinkler,1.64
+Maharashtra,Tomato,Kharif,Medium Black,511.2,27.7,181.8,Flood,28.12
+Maharashtra,Onion,Rabi,Red,70.0,23.8,191.5,Flood,26.51
+Maharashtra,Cotton,Kharif,Medium Black,749.5,30.4,145.7,Flood,1.97
+Maharashtra,Soybean,Kharif,Medium Black,760.9,30.0,77.0,Sprinkler,2.63
+Maharashtra,Jowar,Kharif,Shallow Black,690.8,27.5,55.6,Rainfed,1.66
+Maharashtra,Wheat,Rabi,Deep Black,59.2,18.2,107.4,Sprinkler,2.85
+Maharashtra,Cotton,Kharif,Deep Black,794.6,26.8,184.3,Drip,2.48
+Maharashtra,Gram,Rabi,Deep Black,60.4,24.7,49.1,Rainfed,1.45
+Maharashtra,Jowar,Kharif,Red,649.5,30.7,53.3,Rainfed,1.56
+Maharashtra,Safflower,Rabi,Medium Black,65.4,28.0,33.1,Rainfed,0.91
+Maharashtra,Tur,Kharif,Medium Black,751.8,25.4,62.5,Rainfed,1.24
+Maharashtra,Sugarcane,Whole Year,Deep Black,971.3,27.8,286.1,Drip,109.78
+Maharashtra,Wheat,Rabi,Deep Black,55.4,24.3,104.7,Sprinkler,2.74
+Maharashtra,Safflower,Rabi,Deep Black,83.0,26.3,34.6,Rainfed,0.99
+Maharashtra,Sunflower,Rabi,Deep Black,61.3,25.9,72.3,Rainfed,1.2
+Maharashtra,Onion,Rabi,Red,149.6,26.8,211.8,Drip,28.06
+Maharashtra,Onion,Rabi,Red,76.1,22.0,187.0,Drip,29.28
+Maharashtra,Gram,Rabi,Deep Black,63.3,19.9,38.5,Sprinkler,1.72
+Maharashtra,Tomato,Kharif,Medium Black,692.8,27.6,235.2,Flood,35.06
+Maharashtra,Gram,Rabi,Deep Black,90.2,24.2,30.3,Sprinkler,1.6
+Maharashtra,Cotton,Kharif,Medium Black,621.7,25.8,180.2,Drip,2.17
+Maharashtra,Maize,Kharif,Deep Black,556.6,26.5,105.6,Sprinkler,3.88
+Maharashtra,Sunflower,Rabi,Deep Black,138.2,25.9,63.8,Sprinkler,1.46
+Maharashtra,Safflower,Rabi,Deep Black,91.9,26.2,31.5,Rainfed,0.99
+Maharashtra,Tomato,Kharif,Medium Black,632.5,23.9,219.4,Drip,32.73
+Maharashtra,Groundnut,Summer,Red,133.0,27.5,48.0,Flood,1.85
+Maharashtra,Cotton,Kharif,Medium Black,665.6,31.9,162.2,Drip,2.19
+Maharashtra,Tomato,Kharif,Red,652.5,23.5,199.7,Flood,32.94
+Maharashtra,Groundnut,Summer,Red,143.3,36.7,64.5,Flood,2.27
+Maharashtra,Safflower,Rabi,Deep Black,70.0,24.8,46.6,Rainfed,1.08
+Maharashtra,Wheat,Rabi,Medium Black,97.6,25.4,115.5,Flood,2.92
+Maharashtra,Tomato,Kharif,Medium Black,732.5,27.9,221.3,Drip,38.14
+Maharashtra,Jowar,Kharif,Red,461.5,26.8,61.6,Rainfed,1.37
+Maharashtra,Wheat,Rabi,Medium Black,80.9,20.5,127.5,Flood,3.25
+Maharashtra,Bajra,Kharif,Shallow Black,401.4,30.9,45.7,Rainfed,1.26
+Maharashtra,Safflower,Rabi,Medium Black,54.6,26.7,48.9,Rainfed,0.96
+Maharashtra,Cotton,Kharif,Deep Black,687.8,26.7,179.9,Rainfed,2.03
+Maharashtra,Sugarcane,Whole Year,Deep Black,739.1,22.0,282.7,Flood,86.39
+Maharashtra,Sunflower,Rabi,Medium Black,62.3,23.0,82.9,Rainfed,1.49
+Maharashtra,Onion,Rabi,Medium Black,105.0,20.6,204.9,Drip,29.18
+Maharashtra,Wheat,Rabi,Medium Black,110.2,24.3,112.6,Sprinkler,2.79
+Maharashtra,Green Gram,Kharif,Medium Black,403.4,27.5,38.5,Rainfed,0.82
+Maharashtra,Soybean,Kharif,Deep Black,637.8,27.9,88.3,Rainfed,2.27
+Maharashtra,Safflower,Rabi,Deep Black,104.3,27.4,37.4,Rainfed,1.02
+Maharashtra,Bajra,Kharif,Red,510.5,28.4,47.3,Rainfed,1.47
+Maharashtra,Cotton,Kharif,Medium Black,782.4,29.3,197.8,Drip,2.37
+Maharashtra,Tomato,Kharif,Red,731.0,27.5,202.4,Drip,37.05
+Maharashtra,Green Gram,Kharif,Red,473.4,26.3,24.0,Rainfed,0.66
+Maharashtra,Sugarcane,Whole Year,Deep Black,948.5,27.0,384.8,Drip,111.03
+Maharashtra,Green Gram,Kharif,Red,474.3,30.1,28.6,Rainfed,0.76
+Maharashtra,Jowar,Kharif,Medium Black,665.5,28.2,87.7,Sprinkler,2.14
+Maharashtra,Green Gram,Kharif,Medium Black,551.3,29.5,39.2,Rainfed,0.83
+Maharashtra,Maize,Kharif,Deep Black,559.0,24.5,137.9,Drip,4.67
+Maharashtra,Rabi Jowar,Rabi,Medium Black,71.2,24.9,78.0,Protective,1.62
+Maharashtra,Safflower,Rabi,Medium Black,70.4,18.1,41.5,Rainfed,1.04
+Maharashtra,Safflower,Rabi,Deep Black,122.3,24.1,36.2,Rainfed,0.96
+Maharashtra,Soybean,Kharif,Deep Black,562.1,26.4,66.0,Rainfed,2.03
+Maharashtra,Jowar,Kharif,Red,451.3,29.4,87.2,Rainfed,1.6
+Maharashtra,Bajra,Kharif,Red,538.6,32.1,53.5,Rainfed,1.56
+Maharashtra,Rabi Jowar,Rabi,Deep Black,147.8,21.9,81.8,Rainfed,1.4
+Maharashtra,Tur,Kharif,Red,612.6,29.3,50.8,Drip,1.27
+Maharashtra,Sugarcane,Whole Year,Deep Black,727.7,30.2,333.7,Flood,99.21
+Maharashtra,Cotton,Kharif,Deep Black,654.1,28.9,178.0,Drip,2.36
+Maharashtra,Groundnut,Summer,Red,182.2,34.1,67.8,Drip,2.51
+Maharashtra,Onion,Rabi,Red,99.2,24.5,168.8,Flood,27.16
+Maharashtra,Green Gram,Kharif,Red,466.9,27.5,38.9,Rainfed,0.85
+Maharashtra,Soybean,Kharif,Deep Black,663.2,29.2,81.8,Rainfed,2.11
+Maharashtra,Sugarcane,Whole Year,Medium Black,736.8,22.7,253.2,Drip,99.76
+Maharashtra,Rabi Jowar,Rabi,Medium Black,125.9,21.5,55.6,Rainfed,1.33
+Maharashtra,Cotton,Kharif,Deep Black,785.2,26.9,124.1,Flood,2.17
+Maharashtra,Tomato,Kharif,Medium Black,689.0,29.8,217.0,Drip,38.11
+Maharashtra,Groundnut,Summer,Medium Black,187.9,28.9,41.3,Drip,2.19
+Maharashtra,Wheat,Rabi,Medium Black,121.9,24.0,143.0,Sprinkler,3.47
+Maharashtra,Tomato,Kharif,Red,637.0,22.0,203.0,Flood,32.04
+Maharashtra,Tur,Kharif,Red,720.5,29.3,56.8,Rainfed,1.23
+Maharashtra,Green Gram,Kharif,Medium Black,551.6,31.5,24.5,Rainfed,0.77
+Maharashtra,Gram,Rabi,Medium Black,119.2,23.6,32.5,Sprinkler,1.55
+Maharashtra,Safflower,Rabi,Medium Black,117.8,20.9,41.1,Rainfed,0.93
+Maharashtra,Soybean,Kharif,Deep Black,739.5,25.5,82.2,Rainfed,2.13
+Maharashtra,Safflower,Rabi,Deep Black,89.1,18.2,37.3,Rainfed,1.06
+Maharashtra,Safflower,Rabi,Deep Black,63.2,26.4,38.8,Rainfed,1.02
+Maharashtra,Bajra,Kharif,Shallow Black,454.8,30.7,55.7,Rainfed,1.5
+Maharashtra,Maize,Kharif,Deep Black,596.6,29.2,152.3,Rainfed,3.74
+Maharashtra,Gram,Rabi,Deep Black,104.0,21.3,54.7,Sprinkler,1.78
+Maharashtra,Sugarcane,Whole Year,Medium Black,874.5,26.4,397.2,Flood,103.84
+Maharashtra,Sugarcane,Whole Year,Deep Black,674.1,27.1,292.3,Flood,98.17
+Maharashtra,Safflower,Rabi,Medium Black,61.4,24.0,42.6,Rainfed,0.98
+Maharashtra,Soybean,Kharif,Deep Black,788.3,29.5,92.0,Rainfed,2.22
+Maharashtra,Green Gram,Kharif,Medium Black,440.6,29.2,25.1,Rainfed,0.67
+Maharashtra,Sugarcane,Whole Year,Deep Black,789.6,29.4,306.0,Flood,103.21
+Maharashtra,Bajra,Kharif,Red,481.5,29.7,61.7,Rainfed,1.43
+Maharashtra,Soybean,Kharif,Medium Black,770.5,26.9,98.3,Rainfed,2.53
+Maharashtra,Safflower,Rabi,Deep Black,108.9,20.7,48.6,Rainfed,1.1
+Maharashtra,Rabi Jowar,Rabi,Medium Black,62.0,26.3,65.8,Protective,1.31
+Maharashtra,Rabi Jowar,Rabi,Deep Black,105.8,18.2,62.4,Protective,1.53
+Maharashtra,Wheat,Rabi,Medium Black,101.1,20.2,112.5,Sprinkler,3.21
+Maharashtra,Tomato,Kharif,Medium Black,577.3,30.0,237.5,Drip,35.54
+Maharashtra,Bajra,Kharif,Shallow Black,445.0,29.6,65.0,Rainfed,1.35
+Maharashtra,Bajra,Kharif,Shallow Black,467.4,33.8,50.2,Rainfed,1.42
+Maharashtra,Sugarcane,Whole Year,Medium Black,902.6,30.5,335.1,Flood,93.17
+Maharashtra,Tomato,Kharif,Red,507.2,28.8,194.5,Flood,27.95
+Maharashtra,Maize,Kharif,Medium Black,763.1,30.0,122.8,Rainfed,3.92
+Maharashtra,Bajra,Kharif,Shallow Black,353.9,28.1,43.8,Rainfed,1.21
+Maharashtra,Sugarcane,Whole Year,Medium Black,998.7,25.1,387.5,Drip,113.58
+Maharashtra,Gram,Rabi,Medium Black,105.2,19.3,40.2,Sprinkler,1.61
+Maharashtra,Maize,Kharif,Medium Black,616.3,30.5,152.9,Drip,4.97
+Maharashtra,Tomato,Kharif,Medium Black,600.7,24.7,248.9,Drip,34.8
+Maharashtra,Sugarcane,Whole Year,Medium Black,895.1,28.0,259.0,Flood,103.63
+Maharashtra,Cotton,Kharif,Deep Black,658.2,25.8,146.4,Flood,1.92
+Maharashtra,Gram,Rabi,Medium Black,92.1,26.5,36.0,Sprinkler,1.54
+Maharashtra,Maize,Kharif,Deep Black,609.8,27.1,142.8,Drip,4.32
+Maharashtra,Cotton,Kharif,Deep Black,675.7,29.3,160.2,Flood,1.87
+Maharashtra,Rabi Jowar,Rabi,Medium Black,120.3,26.3,79.6,Rainfed,1.48
+Maharashtra,Wheat,Rabi,Deep Black,92.6,22.0,108.4,Sprinkler,3.25
+Maharashtra,Rabi Jowar,Rabi,Deep Black,146.6,25.9,86.8,Rainfed,1.6
+Maharashtra,Soybean,Kharif,Medium Black,730.3,29.8,90.8,Protective,2.57
+Maharashtra,Safflower,Rabi,Deep Black,62.7,24.7,37.7,Rainfed,0.89
+Maharashtra,Safflower,Rabi,Medium Black,98.5,27.6,44.4,Rainfed,1.07
+Maharashtra,Jowar,Kharif,Medium Black,588.3,29.8,74.3,Rainfed,1.8
+Maharashtra,Green Gram,Kharif,Medium Black,599.0,27.5,20.7,Rainfed,0.73
+Maharashtra,Jowar,Kharif,Red,519.3,32.9,89.5,Rainfed,1.74
+Maharashtra,Groundnut,Summer,Medium Black,107.1,33.8,65.4,Flood,2.12
+Maharashtra,Green Gram,Kharif,Red,462.1,32.1,23.2,Rainfed,0.69
+Maharashtra,Safflower,Rabi,Deep Black,53.5,26.5,34.9,Rainfed,0.95
+Maharashtra,Safflower,Rabi,Deep Black,114.3,22.7,33.0,Rainfed,1.02
+Maharashtra,Onion,Rabi,Red,115.8,27.3,173.0,Drip,28.11
+Maharashtra,Safflower,Rabi,Medium Black,57.3,27.6,46.7,Rainfed,1.04
+Maharashtra,Wheat,Rabi,Medium Black,63.4,17.3,139.1,Sprinkler,3.07
+Maharashtra,Soybean,Kharif,Medium Black,801.5,26.2,108.1,Rainfed,2.5
+Maharashtra,Bajra,Kharif,Red,469.7,28.7,69.0,Rainfed,1.41
+Maharashtra,Gram,Rabi,Deep Black,69.5,21.3,50.0,Flood,1.63
+Maharashtra,Jowar,Kharif,Red,464.2,29.1,84.1,Rainfed,1.5
+Maharashtra,Soybean,Kharif,Medium Black,770.1,30.0,64.9,Protective,2.35
+Maharashtra,Black Gram,Kharif,Red,401.5,28.5,35.1,Rainfed,0.79
+Maharashtra,Bajra,Kharif,Red,414.8,28.0,59.1,Rainfed,1.44
+Maharashtra,Black Gram,Kharif,Medium Black,586.7,31.3,38.3,Rainfed,0.88
+Maharashtra,Black Gram,Kharif,Medium Black,628.8,29.9,35.5,Rainfed,0.84
+Maharashtra,Maize,Kharif,Medium Black,610.7,25.4,138.8,Rainfed,4.1
+Maharashtra,Groundnut,Summer,Medium Black,199.7,31.8,48.9,Drip,2.5
+Maharashtra,Sunflower,Rabi,Medium Black,101.4,30.0,63.5,Rainfed,1.33
+Maharashtra,Onion,Rabi,Medium Black,96.5,19.9,183.3,Drip,28.66
+Maharashtra,Black Gram,Kharif,Medium Black,509.2,28.8,28.8,Rainfed,0.83
+Maharashtra,Tur,Kharif,Medium Black,661.1,25.6,72.6,Rainfed,1.32
+Maharashtra,Wheat,Rabi,Deep Black,104.5,21.4,113.3,Flood,3.04
+Maharashtra,Sunflower,Rabi,Deep Black,135.3,22.2,77.8,Rainfed,1.43
+Maharashtra,Gram,Rabi,Medium Black,124.7,17.7,32.8,Flood,1.6
+Maharashtra,Tomato,Kharif,Medium Black,736.8,27.2,192.3,Flood,36.55
+Maharashtra,Green Gram,Kharif,Red,545.1,32.7,34.8,Rainfed,0.75
+Maharashtra,Black Gram,Kharif,Red,541.9,31.3,23.5,Rainfed,0.8
+Maharashtra,Black Gram,Kharif,Red,590.8,29.5,30.3,Rainfed,0.81
+Maharashtra,Tur,Kharif,Medium Black,772.7,24.5,40.1,Rainfed,1.18
+Maharashtra,Onion,Rabi,Medium Black,73.6,27.1,151.7,Drip,26.9
+Maharashtra,Jowar,Kharif,Shallow Black,612.6,31.0,61.5,Rainfed,1.6
+Maharashtra,Black Gram,Kharif,Red,493.7,27.0,30.6,Rainfed,0.78
+Maharashtra,Onion,Rabi,Medium Black,91.3,16.3,200.5,Flood,26.49
+Maharashtra,Sugarcane,Whole Year,Medium Black,656.0,30.9,351.1,Flood,100.15
+Maharashtra,Onion,Rabi,Red,130.6,25.5,163.3,Drip,25.18
+Maharashtra,Groundnut,Summer,Red,125.7,33.4,51.1,Flood,2.05
+Maharashtra,Maize,Kharif,Deep Black,582.7,26.6,133.7,Rainfed,3.58
+Maharashtra,Cotton,Kharif,Deep Black,653.0,30.1,197.7,Flood,1.92
+Maharashtra,Cotton,Kharif,Deep Black,751.3,29.9,167.6,Rainfed,2.09
+Maharashtra,Onion,Rabi,Red,118.9,18.3,176.0,Drip,29.71
+Maharashtra,Wheat,Rabi,Medium Black,65.7,18.3,128.5,Flood,2.93
+Maharashtra,Soybean,Kharif,Medium Black,752.8,25.7,67.0,Rainfed,2.01
+Maharashtra,Jowar,Kharif,Shallow Black,616.1,25.7,89.0,Rainfed,1.69
+Maharashtra,Maize,Kharif,Medium Black,732.3,25.1,122.8,Drip,5.11
+Maharashtra,Black Gram,Kharif,Red,405.8,32.6,30.1,Rainfed,0.78
+Maharashtra,Safflower,Rabi,Deep Black,124.5,20.5,37.9,Rainfed,1.0
+Maharashtra,Gram,Rabi,Medium Black,95.3,17.5,44.8,Flood,1.75
+Maharashtra,Onion,Rabi,Medium Black,134.8,24.5,174.4,Drip,26.82
+Maharashtra,Wheat,Rabi,Deep Black,84.8,20.5,147.7,Sprinkler,3.49
+Maharashtra,Green Gram,Kharif,Red,647.3,29.8,25.1,Rainfed,0.85
+Maharashtra,Black Gram,Kharif,Medium Black,536.6,32.9,22.0,Rainfed,0.79
+Maharashtra,Safflower,Rabi,Medium Black,100.9,23.8,43.6,Rainfed,1.05
+Maharashtra,Black Gram,Kharif,Medium Black,489.2,31.5,37.3,Rainfed,0.77
+Maharashtra,Groundnut,Summer,Medium Black,178.7,28.1,68.8,Drip,2.51
+Maharashtra,Cotton,Kharif,Deep Black,774.1,29.0,139.5,Flood,2.11
+Maharashtra,Maize,Kharif,Medium Black,565.9,27.1,121.7,Drip,4.27
+Maharashtra,Black Gram,Kharif,Red,461.7,29.9,25.3,Rainfed,0.74
+Maharashtra,Sunflower,Rabi,Deep Black,100.6,25.6,74.7,Rainfed,1.35
+Maharashtra,Tur,Kharif,Shallow Black,766.7,24.2,70.9,Rainfed,1.4
+Maharashtra,Green Gram,Kharif,Red,557.1,29.5,28.3,Rainfed,0.82
+Maharashtra,Safflower,Rabi,Deep Black,103.6,23.2,34.4,Rainfed,0.99
+Maharashtra,Safflower,Rabi,Medium Black,55.9,27.9,39.6,Rainfed,0.97
+Maharashtra,Cotton,Kharif,Deep Black,730.3,28.3,142.0,Flood,2.03
+Maharashtra,Soybean,Kharif,Deep Black,772.8,30.7,100.2,Protective,2.4
+Maharashtra,Onion,Rabi,Red,123.5,21.7,189.3,Drip,30.76
+Maharashtra,Groundnut,Summer,Medium Black,88.5,33.3,46.9,Sprinkler,2.02
+Maharashtra,Soybean,Kharif,Medium Black,690.7,30.1,101.6,Protective,2.4
+Maharashtra,Soybean,Kharif,Medium Black,609.6,28.2,97.3,Protective,2.1
+Maharashtra,Rabi Jowar,Rabi,Medium Black,67.2,18.4,67.3,Protective,1.39
+Maharashtra,Sunflower,Rabi,Deep Black,74.5,26.4,79.0,Rainfed,1.36
+Maharashtra,Gram,Rabi,Deep Black,130.6,22.6,33.4,Flood,1.67
+Maharashtra,Green Gram,Kharif,Medium Black,497.4,31.4,38.9,Rainfed,0.74
+Maharashtra,Tomato,Kharif,Medium Black,500.3,25.8,190.6,Drip,29.73
+Maharashtra,Groundnut,Summer,Red,199.1,30.8,66.1,Drip,2.64
+Maharashtra,Tomato,Kharif,Red,531.3,24.5,185.9,Drip,31.5
+Maharashtra,Tur,Kharif,Medium Black,554.1,25.1,65.6,Rainfed,1.17
+Maharashtra,Groundnut,Summer,Red,141.7,29.8,54.6,Sprinkler,2.11
+Maharashtra,Wheat,Rabi,Medium Black,101.1,25.4,118.4,Flood,2.85
+Maharashtra,Bajra,Kharif,Red,551.4,33.3,56.9,Rainfed,1.61
+Maharashtra,Maize,Kharif,Deep Black,755.5,26.8,104.4,Sprinkler,4.46
+Maharashtra,Sugarcane,Whole Year,Deep Black,951.0,30.0,397.0,Drip,115.5
+Maharashtra,Green Gram,Kharif,Red,563.9,28.8,38.3,Rainfed,0.83
+Maharashtra,Sunflower,Rabi,Medium Black,68.6,20.3,69.4,Rainfed,1.35
+Maharashtra,Tur,Kharif,Shallow Black,599.2,25.7,63.5,Rainfed,1.28
+Maharashtra,Groundnut,Summer,Medium Black,98.9,33.2,60.2,Sprinkler,1.94
+Maharashtra,Groundnut,Summer,Red,174.9,27.1,56.1,Sprinkler,2.18
+Maharashtra,Wheat,Rabi,Medium Black,105.2,19.5,102.1,Flood,3.08
+Maharashtra,Gram,Rabi,Deep Black,113.7,25.5,42.9,Sprinkler,1.76
+Maharashtra,Jowar,Kharif,Red,596.6,31.5,59.3,Rainfed,1.72
+Maharashtra,Maize,Kharif,Deep Black,561.1,27.8,148.8,Sprinkler,3.97
+Maharashtra,Green Gram,Kharif,Red,622.3,26.9,30.1,Rainfed,0.79
+Maharashtra,Safflower,Rabi,Medium Black,56.2,23.2,31.2,Rainfed,0.95
+Maharashtra,Gram,Rabi,Medium Black,147.5,17.3,37.9,Sprinkler,1.72
+Maharashtra,Bajra,Kharif,Shallow Black,444.1,32.0,54.2,Rainfed,1.46
+Maharashtra,Bajra,Kharif,Red,517.5,31.6,60.5,Rainfed,1.36
+Maharashtra,Jowar,Kharif,Red,656.3,25.2,51.8,Rainfed,1.7
+Maharashtra,Green Gram,Kharif,Medium Black,441.8,27.9,26.0,Rainfed,0.76
+Maharashtra,Onion,Rabi,Medium Black,109.9,19.8,206.3,Flood,27.18
+Maharashtra,Soybean,Kharif,Medium Black,622.8,26.8,87.8,Rainfed,2.01
+Maharashtra,Maize,Kharif,Deep Black,564.0,27.6,118.6,Drip,4.13
+Maharashtra,Tur,Kharif,Medium Black,606.9,30.3,45.9,Drip,1.19
+Maharashtra,Sugarcane,Whole Year,Deep Black,911.1,24.4,313.0,Drip,104.04
+Maharashtra,Soybean,Kharif,Medium Black,613.6,24.7,61.7,Rainfed,1.99
+Maharashtra,Maize,Kharif,Deep Black,552.3,28.3,133.8,Sprinkler,3.77
+Maharashtra,Jowar,Kharif,Red,558.0,30.4,76.4,Rainfed,1.56
+Maharashtra,Jowar,Kharif,Red,576.8,32.9,72.2,Sprinkler,1.85
+Maharashtra,Black Gram,Kharif,Red,636.1,31.0,29.9,Rainfed,0.85
+Maharashtra,Jowar,Kharif,Shallow Black,689.6,30.2,55.9,Sprinkler,1.79
+Maharashtra,Gram,Rabi,Medium Black,102.4,21.3,59.9,Flood,1.64
+Maharashtra,Black Gram,Kharif,Medium Black,443.8,30.3,27.7,Rainfed,0.75
+Maharashtra,Sunflower,Rabi,Deep Black,105.1,26.1,80.2,Rainfed,1.32
+Maharashtra,Safflower,Rabi,Deep Black,96.1,25.4,33.5,Rainfed,0.95
+Maharashtra,Bajra,Kharif,Shallow Black,454.5,32.7,68.0,Rainfed,1.34
+Maharashtra,Maize,Kharif,Medium Black,624.6,28.2,155.7,Sprinkler,4.33
+Maharashtra,Bajra,Kharif,Shallow Black,513.1,27.9,62.2,Rainfed,1.57
+Maharashtra,Gram,Rabi,Deep Black,119.6,21.7,37.5,Sprinkler,1.62
+Maharashtra,Bajra,Kharif,Red,557.6,30.4,66.9,Rainfed,1.62
+Maharashtra,Sunflower,Rabi,Medium Black,74.5,27.6,78.7,Sprinkler,1.63
+Maharashtra,Jowar,Kharif,Medium Black,575.6,29.7,84.8,Rainfed,1.88
+Maharashtra,Cotton,Kharif,Medium Black,833.2,32.0,198.5,Rainfed,2.01
+Maharashtra,Sugarcane,Whole Year,Deep Black,836.5,29.3,260.3,Flood,97.73
+Maharashtra,Jowar,Kharif,Medium Black,453.5,29.3,61.0,Rainfed,1.6
+Maharashtra,Maize,Kharif,Deep Black,605.4,28.3,143.6,Drip,4.87
+Maharashtra,Rabi Jowar,Rabi,Deep Black,150.0,21.5,76.0,Rainfed,1.49
+Maharashtra,Black Gram,Kharif,Red,526.1,27.2,25.0,Rainfed,0.75
+Maharashtra,Sunflower,Rabi,Deep Black,74.5,21.6,79.7,Sprinkler,1.41
+Maharashtra,Wheat,Rabi,Deep Black,80.1,24.2,119.6,Sprinkler,2.85
+Maharashtra,Gram,Rabi,Deep Black,109.6,22.0,57.7,Rainfed,1.57
+Maharashtra,Sugarcane,Whole Year,Deep Black,988.4,25.6,369.4,Flood,97.34
+Maharashtra,Gram,Rabi,Deep Black,132.4,23.6,57.2,Sprinkler,1.87
+Maharashtra,Rabi Jowar,Rabi,Medium Black,77.9,23.1,70.0,Rainfed,1.27
+Maharashtra,Wheat,Rabi,Medium Black,54.0,19.8,110.6,Flood,2.86
+Maharashtra,Sunflower,Rabi,Deep Black,123.3,24.0,86.9,Sprinkler,1.59
+Maharashtra,Maize,Kharif,Deep Black,553.1,26.9,146.8,Rainfed,3.89
+Maharashtra,Rabi Jowar,Rabi,Deep Black,93.7,19.6,88.1,Rainfed,1.59
+Maharashtra,Groundnut,Summer,Red,154.7,31.6,57.8,Flood,2.12
+Maharashtra,Tomato,Kharif,Red,592.8,29.6,235.7,Flood,33.43
+Maharashtra,Green Gram,Kharif,Medium Black,632.9,26.7,37.6,Rainfed,0.83
+Maharashtra,Onion,Rabi,Medium Black,105.6,23.7,172.8,Flood,26.6
+Maharashtra,Safflower,Rabi,Deep Black,103.0,26.6,42.4,Rainfed,1.02
+Maharashtra,Tomato,Kharif,Medium Black,557.4,29.2,235.4,Drip,35.27
+Maharashtra,Tur,Kharif,Red,660.2,31.8,42.1,Rainfed,1.11
+Maharashtra,Tomato,Kharif,Medium Black,535.0,23.5,217.0,Flood,33.26
+Maharashtra,Maize,Kharif,Medium Black,631.1,29.4,103.4,Drip,4.46
+Maharashtra,Tomato,Kharif,Medium Black,599.1,24.4,236.0,Drip,34.02
+Maharashtra,Onion,Rabi,Red,139.3,21.3,152.0,Flood,25.49
+Maharashtra,Groundnut,Summer,Red,178.6,29.4,57.2,Sprinkler,2.3
+Maharashtra,Sugarcane,Whole Year,Deep Black,742.9,29.2,395.8,Flood,100.93
+Maharashtra,Groundnut,Summer,Red,146.4,27.1,46.0,Sprinkler,2.06
+Maharashtra,Sunflower,Rabi,Deep Black,131.9,24.9,61.7,Sprinkler,1.31
+Maharashtra,Gram,Rabi,Medium Black,92.4,19.5,37.8,Sprinkler,1.53
+Maharashtra,Jowar,Kharif,Medium Black,626.5,27.4,74.6,Sprinkler,1.82
+Maharashtra,Onion,Rabi,Medium Black,60.1,23.5,209.4,Flood,28.17
+Maharashtra,Soybean,Kharif,Medium Black,709.7,28.0,95.5,Sprinkler,2.5
+Maharashtra,Tomato,Kharif,Red,569.9,26.8,250.4,Flood,33.8
+Maharashtra,Black Gram,Kharif,Medium Black,469.4,28.2,30.2,Rainfed,0.71
+Maharashtra,Maize,Kharif,Medium Black,587.3,27.9,118.2,Sprinkler,4.37
+Maharashtra,Gram,Rabi,Medium Black,71.6,23.1,31.7,Sprinkler,1.61
+Maharashtra,Jowar,Kharif,Red,657.4,29.9,84.5,Rainfed,1.88
+Maharashtra,Groundnut,Summer,Medium Black,151.6,30.5,63.6,Sprinkler,2.18
+Maharashtra,Tur,Kharif,Shallow Black,757.9,23.7,56.6,Drip,1.53
+Maharashtra,Wheat,Rabi,Deep Black,116.8,21.8,107.4,Flood,2.73
+Maharashtra,Tomato,Kharif,Medium Black,513.3,26.0,198.9,Flood,32.51
+Maharashtra,Sugarcane,Whole Year,Deep Black,691.8,29.4,257.9,Flood,86.52
+Maharashtra,Groundnut,Summer,Medium Black,124.9,31.6,60.4,Drip,2.29
+Maharashtra,Bajra,Kharif,Red,463.4,31.5,44.7,Rainfed,1.31
+Maharashtra,Bajra,Kharif,Red,375.6,26.7,52.9,Rainfed,1.32
+Maharashtra,Green Gram,Kharif,Red,466.9,27.7,21.9,Rainfed,0.68
+Maharashtra,Green Gram,Kharif,Red,595.2,30.0,35.5,Rainfed,0.84
+Maharashtra,Tur,Kharif,Red,544.7,30.6,49.7,Rainfed,1.09
+Maharashtra,Black Gram,Kharif,Red,454.8,33.0,30.2,Rainfed,0.69
+Maharashtra,Rabi Jowar,Rabi,Deep Black,145.5,20.0,50.8,Rainfed,1.21
+Maharashtra,Maize,Kharif,Deep Black,720.7,29.3,157.3,Drip,5.24
+Maharashtra,Gram,Rabi,Medium Black,150.1,23.8,34.7,Sprinkler,1.57
+Maharashtra,Jowar,Kharif,Red,677.9,30.0,67.1,Sprinkler,1.99
+Maharashtra,Sunflower,Rabi,Medium Black,102.2,26.7,88.9,Rainfed,1.53
+Maharashtra,Sunflower,Rabi,Medium Black,91.8,27.1,67.5,Rainfed,1.2
+Maharashtra,Tomato,Kharif,Medium Black,691.0,24.3,189.6,Drip,35.23
+Maharashtra,Green Gram,Kharif,Red,560.8,26.2,40.0,Rainfed,0.9
+Maharashtra,Sunflower,Rabi,Medium Black,87.8,23.7,80.1,Rainfed,1.46
+Maharashtra,Sunflower,Rabi,Medium Black,100.5,24.1,78.5,Sprinkler,1.57
+Maharashtra,Bajra,Kharif,Red,499.1,30.6,52.7,Rainfed,1.41
+Maharashtra,Jowar,Kharif,Shallow Black,582.8,29.5,62.7,Sprinkler,1.92
+Maharashtra,Tur,Kharif,Medium Black,798.0,24.3,61.2,Drip,1.42
+Maharashtra,Bajra,Kharif,Red,509.5,32.0,43.1,Rainfed,1.24
+Maharashtra,Rabi Jowar,Rabi,Medium Black,105.7,19.1,75.0,Rainfed,1.5
+Maharashtra,Tur,Kharif,Shallow Black,542.1,31.3,66.2,Drip,1.4
+Maharashtra,Gram,Rabi,Deep Black,86.2,22.1,44.9,Sprinkler,1.54
+Maharashtra,Rabi Jowar,Rabi,Medium Black,128.7,22.9,78.9,Protective,1.57
+Maharashtra,Wheat,Rabi,Deep Black,118.3,17.1,119.1,Sprinkler,2.98
+Maharashtra,Maize,Kharif,Deep Black,683.9,29.8,103.1,Sprinkler,4.05
+Maharashtra,Cotton,Kharif,Medium Black,698.1,25.9,148.2,Flood,1.97
+Maharashtra,Green Gram,Kharif,Medium Black,416.1,28.9,30.9,Rainfed,0.72
+Maharashtra,Green Gram,Kharif,Red,439.4,31.8,34.1,Rainfed,0.77
+Maharashtra,Wheat,Rabi,Medium Black,63.3,17.4,110.3,Sprinkler,2.84
+Maharashtra,Tomato,Kharif,Red,603.9,25.9,217.8,Flood,32.27
+Maharashtra,Tomato,Kharif,Red,507.0,29.4,247.1,Drip,35.34
+Maharashtra,Rabi Jowar,Rabi,Deep Black,135.0,27.0,81.0,Protective,1.44
+Maharashtra,Soybean,Kharif,Medium Black,578.4,26.7,96.5,Protective,2.04
+Maharashtra,Cotton,Kharif,Deep Black,648.1,26.0,162.9,Flood,2.06
+Maharashtra,Groundnut,Summer,Red,187.3,34.6,41.4,Drip,2.27
+Maharashtra,Green Gram,Kharif,Red,522.6,32.4,21.5,Rainfed,0.68
+Maharashtra,Tur,Kharif,Shallow Black,565.4,31.4,49.0,Rainfed,1.17
+Maharashtra,Sugarcane,Whole Year,Deep Black,957.0,24.9,337.1,Drip,115.5
+Maharashtra,Cotton,Kharif,Deep Black,817.6,31.0,137.7,Rainfed,2.01
+Maharashtra,Sunflower,Rabi,Deep Black,67.2,23.2,82.4,Sprinkler,1.46
+Maharashtra,Soybean,Kharif,Medium Black,570.0,30.4,83.6,Rainfed,2.14
+Maharashtra,Sugarcane,Whole Year,Medium Black,731.9,24.6,394.8,Flood,104.29
+Maharashtra,Gram,Rabi,Deep Black,76.5,21.7,33.8,Flood,1.59
+Maharashtra,Rabi Jowar,Rabi,Deep Black,120.0,21.5,72.4,Rainfed,1.49
+Maharashtra,Maize,Kharif,Deep Black,773.3,24.6,109.0,Rainfed,3.88
+Maharashtra,Rabi Jowar,Rabi,Deep Black,137.8,27.8,82.4,Rainfed,1.55
+Maharashtra,Sugarcane,Whole Year,Deep Black,854.2,23.9,344.4,Drip,109.53
+Maharashtra,Rabi Jowar,Rabi,Deep Black,121.4,23.5,88.1,Rainfed,1.47
+Maharashtra,Sunflower,Rabi,Medium Black,121.5,27.2,70.7,Sprinkler,1.51
+Maharashtra,Soybean,Kharif,Medium Black,633.8,28.6,91.0,Rainfed,1.98
+Maharashtra,Soybean,Kharif,Deep Black,676.5,24.1,74.7,Protective,2.17
+Maharashtra,Rabi Jowar,Rabi,Deep Black,90.2,22.3,71.0,Rainfed,1.33
+Maharashtra,Gram,Rabi,Medium Black,83.3,19.6,53.7,Flood,1.72
+Maharashtra,Tur,Kharif,Shallow Black,645.0,27.4,53.3,Rainfed,1.22
+Maharashtra,Sugarcane,Whole Year,Deep Black,887.4,28.3,316.1,Flood,104.26
+Maharashtra,Sugarcane,Whole Year,Medium Black,911.3,25.7,267.3,Flood,105.77
+Maharashtra,Onion,Rabi,Medium Black,141.8,18.9,178.6,Flood,24.2
+Maharashtra,Tur,Kharif,Red,612.9,29.8,45.6,Drip,1.42
+Maharashtra,Gram,Rabi,Medium Black,146.5,18.2,54.4,Sprinkler,1.64
+Maharashtra,Tomato,Kharif,Medium Black,523.3,29.4,251.8,Flood,32.73
+Maharashtra,Rabi Jowar,Rabi,Deep Black,101.0,21.6,70.0,Protective,1.47
+Maharashtra,Tur,Kharif,Shallow Black,717.3,24.9,70.1,Rainfed,1.37
+Maharashtra,Sunflower,Rabi,Medium Black,102.5,30.0,84.9,Rainfed,1.33
+Maharashtra,Sugarcane,Whole Year,Deep Black,744.0,31.1,300.7,Flood,96.05
+Maharashtra,Onion,Rabi,Medium Black,88.0,15.2,178.6,Drip,26.39
+Maharashtra,Green Gram,Kharif,Red,573.5,32.3,20.9,Rainfed,0.8
+Maharashtra,Wheat,Rabi,Deep Black,54.8,23.9,129.8,Flood,3.26
+Maharashtra,Tomato,Kharif,Medium Black,605.1,29.5,234.2,Drip,38.4
+Maharashtra,Tomato,Kharif,Red,705.8,24.0,207.7,Flood,32.64
+Maharashtra,Wheat,Rabi,Medium Black,96.6,17.4,117.5,Flood,3.25
+Maharashtra,Onion,Rabi,Red,98.1,21.1,201.0,Flood,27.58
+Maharashtra,Wheat,Rabi,Medium Black,79.3,20.0,128.5,Sprinkler,2.96
+Maharashtra,Onion,Rabi,Red,88.2,17.3,213.8,Flood,26.43
+Maharashtra,Cotton,Kharif,Medium Black,647.5,26.7,124.7,Drip,2.06
+Maharashtra,Onion,Rabi,Red,79.8,27.8,153.8,Drip,25.35
+Maharashtra,Maize,Kharif,Deep Black,721.2,26.9,150.4,Rainfed,4.17
+Maharashtra,Rabi Jowar,Rabi,Deep Black,73.8,25.5,74.2,Protective,1.45
+Maharashtra,Soybean,Kharif,Deep Black,674.9,28.7,85.6,Protective,2.4
+Maharashtra,Rabi Jowar,Rabi,Medium Black,84.7,27.8,87.9,Protective,1.43
+Maharashtra,Black Gram,Kharif,Medium Black,468.1,30.2,34.4,Rainfed,0.73
+Maharashtra,Sunflower,Rabi,Deep Black,89.5,27.4,89.4,Sprinkler,1.62
+Maharashtra,Bajra,Kharif,Shallow Black,409.7,29.2,60.2,Rainfed,1.33
+Maharashtra,Bajra,Kharif,Shallow Black,429.2,26.9,40.2,Rainfed,1.23
+Maharashtra,Onion,Rabi,Medium Black,67.5,17.1,181.5,Flood,26.07
+Maharashtra,Rabi Jowar,Rabi,Deep Black,91.8,24.7,80.0,Protective,1.61
+Maharashtra,Gram,Rabi,Medium Black,129.9,24.3,55.4,Sprinkler,1.6
+Maharashtra,Wheat,Rabi,Deep Black,51.3,21.5,129.2,Flood,3.2

@@ -1,0 +1,202 @@
+{% extends "base.html" %}
+
+{% block title %}Agricultural Data | Crop Yield Advisory Analytics{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <div class="page-title">
+        <h2><i class="fa-solid fa-table"></i> Module 2 & 3: Data Cleaning & Agricultural Database</h2>
+        <p>Cleaned agricultural records stored in relational database (DBMS). Search, filter, and insert individual field records.</p>
+    </div>
+    <div style="display: flex; gap: 0.8rem; align-items: center; flex-wrap: wrap;">
+        <a href="{{ url_for('dataset_management') }}" class="btn btn-outline">
+            <i class="fa-solid fa-cloud-arrow-up"></i> Import Dataset (.csv / .xls)
+        </a>
+        <button type="button" class="btn btn-primary" id="toggleAddRecordBtn" onclick="toggleAddRecordForm(event)">
+            <i class="fa-solid fa-plus"></i> Add Single Record
+        </button>
+    </div>
+</div>
+
+<!-- Collapsible Add Single Record Form -->
+<div id="addRecordFormContainer" class="form-card" style="display: none;">
+    <h3 style="color: var(--primary-color); margin-bottom: 1rem;">
+        <i class="fa-solid fa-pen-to-square"></i> Add New Agricultural Record
+    </h3>
+    <form action="{{ url_for('add_record') }}" method="POST">
+        <div class="form-grid">
+            <div class="form-group">
+                <label for="crop_type">Crop Type *</label>
+                <select name="crop_type" id="crop_type" class="form-select" required>
+                    <option value="Rice">Rice</option>
+                    <option value="Wheat">Wheat</option>
+                    <option value="Maize">Maize</option>
+                    <option value="Cotton">Cotton</option>
+                    <option value="Sugarcane">Sugarcane</option>
+                    <option value="Pulses">Pulses</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="soil">Soil Type</label>
+                <select name="soil" id="soil" class="form-select">
+                    <option value="Alluvial">Alluvial</option>
+                    <option value="Black">Black</option>
+                    <option value="Red">Red</option>
+                    <option value="Clay">Clay</option>
+                    <option value="Loam">Loam</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="rainfall">Rainfall (mm)</label>
+                <input type="number" step="0.1" name="rainfall" id="rainfall" class="form-control" placeholder="e.g. 850.0">
+            </div>
+            <div class="form-group">
+                <label for="temperature">Temperature (°C)</label>
+                <input type="number" step="0.1" name="temperature" id="temperature" class="form-control" placeholder="e.g. 27.5">
+            </div>
+            <div class="form-group">
+                <label for="fertilizer">Fertilizer (kg/ha)</label>
+                <input type="number" step="0.1" name="fertilizer" id="fertilizer" class="form-control" placeholder="e.g. 120.0">
+            </div>
+            <div class="form-group">
+                <label for="irrigation">Irrigation Method</label>
+                <select name="irrigation" id="irrigation" class="form-select">
+                    <option value="Canal">Canal</option>
+                    <option value="Tube Well">Tube Well</option>
+                    <option value="Drip">Drip</option>
+                    <option value="Rainfed">Rainfed</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="yield_value">Crop Yield (tons/ha) *</label>
+                <input type="number" step="0.1" name="yield_value" id="yield_value" class="form-control" placeholder="e.g. 4.2" required>
+            </div>
+            <div class="form-group">
+                <label for="location">Location / State</label>
+                <input type="text" name="location" id="location" class="form-control" placeholder="e.g. Punjab">
+            </div>
+            <div class="form-group">
+                <label for="season">Season</label>
+                <select name="season" id="season" class="form-select">
+                    <option value="Kharif">Kharif</option>
+                    <option value="Rabi">Rabi</option>
+                    <option value="Zaid">Zaid</option>
+                </select>
+            </div>
+        </div>
+        <div style="display: flex; gap: 0.8rem; justify-content: flex-end;">
+            <button type="button" class="btn btn-outline" onclick="toggleAddRecordForm(event)">Cancel</button>
+            <button type="submit" class="btn btn-primary"><i class="fa-solid fa-save"></i> Save Record to Database</button>
+        </div>
+    </form>
+</div>
+
+{% if record_count == 0 and not search and selected_crop == 'All' and selected_soil == 'All' and selected_season == 'All' %}
+<div class="empty-state-card">
+    <div class="empty-state-icon">
+        <i class="fa-solid fa-table"></i>
+    </div>
+    <h3 class="empty-state-title">No Agricultural Records Available</h3>
+    <p class="empty-state-text">
+        No dataset has been uploaded to the database yet. Baseline sample datasets have been removed and nothing is shown until you provide your dataset. 
+        You can upload an external dataset file (<strong>.csv</strong>, <strong>.xlsx</strong>, or <strong>.xls</strong>) in the Datasets module or insert a manual record.
+    </p>
+    <div class="empty-state-actions">
+        <a href="{{ url_for('dataset_management') }}" class="btn btn-primary" style="padding: 0.8rem 1.6rem; font-size: 1rem;">
+            <i class="fa-solid fa-cloud-arrow-up"></i> Upload Agricultural Dataset
+        </a>
+        <button type="button" class="btn btn-outline" onclick="toggleAddRecordForm(event)">
+            <i class="fa-solid fa-plus"></i> Add Single Record
+        </button>
+    </div>
+    <div class="empty-state-badges">
+        <span class="empty-state-badge"><i class="fa-solid fa-file-csv"></i> CSV Files</span>
+        <span class="empty-state-badge"><i class="fa-solid fa-file-excel"></i> Excel (.xlsx / .xls)</span>
+        <span class="empty-state-badge"><i class="fa-solid fa-pen-to-square"></i> Manual Entry</span>
+    </div>
+</div>
+{% else %}
+<!-- Search & Filter Controls -->
+<form method="GET" action="{{ url_for('agricultural_data') }}" class="filter-bar">
+    <div class="filter-inputs">
+        <input type="text" id="tableSearchInput" name="search" class="form-control" placeholder="Search by crop, soil, state, season..." value="{{ search }}" style="min-width: 200px;">
+
+        <select name="crop" class="form-select" onchange="this.form.submit()">
+            <option value="All">Filter by Crop: All</option>
+            {% for c in crops %}
+                {% if c != 'All' %}
+                    <option value="{{ c }}" {% if selected_crop == c %}selected{% endif %}>{{ c }}</option>
+                {% endif %}
+            {% endfor %}
+        </select>
+
+        <select name="soil" class="form-select" onchange="this.form.submit()">
+            <option value="All">Filter by Soil: All</option>
+            {% for s in soils %}
+                {% if s != 'All' %}
+                    <option value="{{ s }}" {% if selected_soil == s %}selected{% endif %}>{{ s }}</option>
+                {% endif %}
+            {% endfor %}
+        </select>
+
+        <select name="season" class="form-select" onchange="this.form.submit()">
+            <option value="All">Filter by Season: All</option>
+            {% for se in seasons %}
+                {% if se != 'All' %}
+                    <option value="{{ se }}" {% if selected_season == se %}selected{% endif %}>{{ se }}</option>
+                {% endif %}
+            {% endfor %}
+        </select>
+    </div>
+    <div style="font-size: 0.88rem; color: var(--text-muted); font-weight: 600;">
+        Showing {{ record_count }} Total Database Records
+    </div>
+</form>
+
+<!-- Agricultural Data Table -->
+<div class="table-card">
+    <div class="table-responsive">
+        <table class="data-table" id="agriDataTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Crop Type</th>
+                    <th>Soil</th>
+                    <th>Rainfall (mm)</th>
+                    <th>Temp (°C)</th>
+                    <th>Fertilizer (kg/ha)</th>
+                    <th>Irrigation</th>
+                    <th>Yield (t/ha)</th>
+                    <th>Location</th>
+                    <th>Season</th>
+                    <th>Source Dataset</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for r in records %}
+                <tr>
+                    <td><strong>#{{ r.id }}</strong></td>
+                    <td><span class="badge" style="background: #e8f5e9; color: #1b4332;">{{ r.crop_type }}</span></td>
+                    <td>{{ r.soil if r.soil else 'N/A' }}</td>
+                    <td>{{ r.rainfall ~ ' mm' if r.rainfall is not none and r.rainfall != '' else 'N/A' }}</td>
+                    <td>{{ r.temperature ~ ' °C' if r.temperature is not none and r.temperature != '' else 'N/A' }}</td>
+                    <td>{{ r.fertilizer ~ ' kg/ha' if r.fertilizer is not none and r.fertilizer != '' else 'N/A' }}</td>
+                    <td>{{ r.irrigation if r.irrigation else 'N/A' }}</td>
+                    <td><strong style="color: #2d6a4f;">{{ r.yield_value }} t/ha</strong></td>
+                    <td>{{ r.location if r.location else 'N/A' }}</td>
+                    <td>{{ r.season if r.season else 'N/A' }}</td>
+                    <td><span class="badge" style="background: #f1f5f9; color: #475569; font-weight: normal;">{{ r.source_dataset if r.source_dataset else 'Sample Data' }}</span></td>
+                </tr>
+                {% else %}
+                <tr>
+                    <td colspan="11" style="text-align: center; padding: 2rem; color: var(--text-muted);">
+                        No agricultural records matched the filter criteria.
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endif %}
+{% endblock %}

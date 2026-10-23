@@ -1,0 +1,141 @@
+{% extends "base.html" %}
+
+{% block title %}Yield Visualization | Crop Yield Advisory Analytics{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <div class="page-title">
+        <h2><i class="fa-solid fa-chart-pie"></i> Module 6: Data Visualization</h2>
+        <p>Dynamic, interactive visualizations analyzing agricultural yields across weather, soil, and input drivers.</p>
+    </div>
+</div>
+
+{% if not has_data %}
+<div class="empty-state-card">
+    <div class="empty-state-icon">
+        <i class="fa-solid fa-chart-pie"></i>
+    </div>
+    <h3 class="empty-state-title">No Data Available for Visualization</h3>
+    <p class="empty-state-text">
+        Interactive crop yield comparison charts and environmental scatter plots require active dataset records. 
+        Baseline sample datasets have been removed and nothing is shown until you provide your dataset. 
+        Please upload your dataset file (<strong>.csv</strong>, <strong>.xlsx</strong>, or <strong>.xls</strong>) in the Datasets module to render visual analytics.
+    </p>
+    <div class="empty-state-actions">
+        <a href="{{ url_for('dataset_management') }}" class="btn btn-primary" style="padding: 0.8rem 1.6rem; font-size: 1rem;">
+            <i class="fa-solid fa-cloud-arrow-up"></i> Upload Agricultural Dataset
+        </a>
+    </div>
+    <div class="empty-state-badges">
+        <span class="empty-state-badge"><i class="fa-solid fa-chart-column"></i> Crop Yield Bar Charts</span>
+        <span class="empty-state-badge"><i class="fa-solid fa-cloud-rain"></i> Rainfall vs Yield Scatter</span>
+        <span class="empty-state-badge"><i class="fa-solid fa-temperature-high"></i> Temperature Scatter</span>
+        <span class="empty-state-badge"><i class="fa-solid fa-droplet"></i> Irrigation Benchmarks</span>
+    </div>
+</div>
+{% else %}
+<!-- Interactive Crop Filter Bar -->
+<form method="GET" action="{{ url_for('visualization') }}" class="filter-bar">
+    <div style="display: flex; align-items: center; gap: 0.8rem;">
+        <label for="cropSelect" style="font-weight: 600; color: var(--primary-color);">
+            <i class="fa-solid fa-filter"></i> Select Crop Category:
+        </label>
+        <select id="cropSelect" name="crop" class="form-select" onchange="this.form.submit()" style="min-width: 200px;">
+            {% for c in crops %}
+                <option value="{{ c }}" {% if selected_crop == c %}selected{% endif %}>
+                    {% if c == 'All' %}All Crops{% else %}{{ c }}{% endif %}
+                </option>
+            {% endfor %}
+        </select>
+    </div>
+    <div style="font-size: 0.85rem; color: var(--text-muted);">
+        Interactive visual exploration stage
+    </div>
+</form>
+
+<!-- Visualizations Grid -->
+<div class="charts-grid">
+    <!-- Chart 1: Crop-wise Yield -->
+    <div class="chart-card">
+        <div class="chart-header">
+            <h3><i class="fa-solid fa-chart-column"></i> 1. Crop-wise Average Yield Bar Chart</h3>
+        </div>
+        <div class="chart-container">
+            <canvas id="visCropYieldChart"></canvas>
+        </div>
+    </div>
+
+    <!-- Chart 2: Rainfall vs Yield -->
+    <div class="chart-card">
+        <div class="chart-header">
+            <h3><i class="fa-solid fa-cloud-showers-heavy"></i> 2. Rainfall vs Yield Scatter Plot</h3>
+        </div>
+        {% if chart_data.has_rainfall %}
+        <div class="chart-container">
+            <canvas id="visRainfallChart"></canvas>
+        </div>
+        {% else %}
+        <div style="height: 280px; display: flex; align-items: center; justify-content: center; background: #f8fafc; border-radius: 8px; color: var(--text-muted); font-size: 0.9rem;">
+            <i class="fa-solid fa-info-circle" style="margin-right: 0.5rem;"></i> Rainfall data is not available in the current dataset.
+        </div>
+        {% endif %}
+    </div>
+
+    <!-- Chart 3: Temperature vs Yield -->
+    <div class="chart-card">
+        <div class="chart-header">
+            <h3><i class="fa-solid fa-temperature-high"></i> 3. Temperature vs Yield Scatter Plot</h3>
+        </div>
+        {% if chart_data.has_temp %}
+        <div class="chart-container">
+            <canvas id="visTempChart"></canvas>
+        </div>
+        {% else %}
+        <div style="height: 280px; display: flex; align-items: center; justify-content: center; background: #f8fafc; border-radius: 8px; color: var(--text-muted); font-size: 0.9rem;">
+            <i class="fa-solid fa-info-circle" style="margin-right: 0.5rem;"></i> Temperature data is not available in the current dataset.
+        </div>
+        {% endif %}
+    </div>
+
+    <!-- Chart 4: Fertilizer vs Yield -->
+    <div class="chart-card">
+        <div class="chart-header">
+            <h3><i class="fa-solid fa-flask"></i> 4. Fertilizer Usage vs Yield Scatter</h3>
+        </div>
+        {% if chart_data.has_fert %}
+        <div class="chart-container">
+            <canvas id="visFertChart"></canvas>
+        </div>
+        {% else %}
+        <div style="height: 280px; display: flex; align-items: center; justify-content: center; background: #f8fafc; border-radius: 8px; color: var(--text-muted); font-size: 0.9rem;">
+            <i class="fa-solid fa-info-circle" style="margin-right: 0.5rem;"></i> Fertilizer data is not available in the current dataset.
+        </div>
+        {% endif %}
+    </div>
+
+    <!-- Chart 5: Irrigation vs Yield -->
+    <div class="chart-card" style="grid-column: 1 / -1;">
+        <div class="chart-header">
+            <h3><i class="fa-solid fa-droplet"></i> 5. Irrigation Method vs Average Yield Comparison</h3>
+        </div>
+        {% if chart_data.has_irr %}
+        <div class="chart-container" style="height: 320px;">
+            <canvas id="visIrrChart"></canvas>
+        </div>
+        {% else %}
+        <div style="height: 240px; display: flex; align-items: center; justify-content: center; background: #f8fafc; border-radius: 8px; color: var(--text-muted); font-size: 0.9rem;">
+            <i class="fa-solid fa-info-circle" style="margin-right: 0.5rem;"></i> Irrigation data is not available in the current dataset.
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endif %}
+{% endblock %}
+
+{% block scripts %}
+{% if has_data %}
+<script>
+    const visChartData = {{ chart_data | tojson }};
+</script>
+{% endif %}
+{% endblock %}

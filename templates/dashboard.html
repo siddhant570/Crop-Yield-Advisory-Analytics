@@ -1,0 +1,214 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard | Crop Yield Advisory Analytics{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <div class="page-title">
+        <h2><i class="fa-solid fa-gauge-high"></i> Agricultural Analytics Dashboard</h2>
+        <p>Real-time agricultural metrics, environmental driver trends, and crop yield performance analytics.</p>
+    </div>
+    <div style="font-size: 0.85rem; background: #e8f5e9; padding: 0.5rem 1rem; border-radius: 20px; color: #1b4332; font-weight: 600;">
+        <i class="fa-solid fa-database"></i> Storage Mode: <strong>{{ metrics.db_mode }}</strong>
+    </div>
+</div>
+
+<!-- Syllabus Workflow Pipeline & Foundational Course Mapping -->
+<div class="card" style="margin-bottom: 1.5rem; padding: 1.2rem; background: #ffffff; border: 1px solid #d1fae5; border-left: 5px solid var(--primary-color);">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; flex-wrap: wrap; gap: 0.5rem;">
+        <h4 style="margin: 0; color: var(--primary-color); font-size: 0.95rem; display: flex; align-items: center; gap: 0.5rem;">
+            <i class="fa-solid fa-diagram-project"></i> Core Agricultural Data Pipeline
+        </h4>
+        <div style="display: flex; gap: 0.4rem; flex-wrap: wrap; font-size: 0.72rem;">
+            <span class="badge" style="background: #e0f2fe; color: #0369a1;"><i class="fa-brands fa-python"></i> Python</span>
+            <span class="badge" style="background: #fef3c7; color: #92400e;"><i class="fa-solid fa-database"></i> DBMS</span>
+            <span class="badge" style="background: #ede9fe; color: #6d28d9;"><i class="fa-solid fa-chart-line"></i> Statistics</span>
+            <span class="badge" style="background: #fce7f3; color: #9d174d;"><i class="fa-solid fa-chart-pie"></i> Data Viz</span>
+            <span class="badge" style="background: #dcfce7; color: #15803d;"><i class="fa-solid fa-code"></i> Web Dev</span>
+        </div>
+    </div>
+
+    <!-- Stepper Flow -->
+    <div style="display: flex; align-items: center; justify-content: space-between; gap: 0.3rem; overflow-x: auto; padding: 0.4rem 0;">
+        <a href="{{ url_for('dataset_management') }}" style="text-decoration: none; text-align: center; flex: 1; min-width: 110px; padding: 0.5rem; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px;">
+            <div style="font-size: 0.75rem; color: #64748b; font-weight: 600;">MODULE 1</div>
+            <div style="font-size: 0.82rem; font-weight: 700; color: var(--primary-color);">Data Collection</div>
+            <span style="font-size: 0.7rem; color: #16a34a;"><i class="fa-solid fa-circle-check"></i> Upload CSV</span>
+        </a>
+        <div style="color: #94a3b8;"><i class="fa-solid fa-chevron-right"></i></div>
+
+        <a href="{{ url_for('agricultural_data') }}" style="text-decoration: none; text-align: center; flex: 1; min-width: 110px; padding: 0.5rem; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px;">
+            <div style="font-size: 0.75rem; color: #64748b; font-weight: 600;">MODULE 2</div>
+            <div style="font-size: 0.82rem; font-weight: 700; color: var(--primary-color);">Data Cleaning</div>
+            <span style="font-size: 0.7rem; color: #16a34a;"><i class="fa-solid fa-circle-check"></i> Imputation</span>
+        </a>
+        <div style="color: #94a3b8;"><i class="fa-solid fa-chevron-right"></i></div>
+
+        <a href="{{ url_for('agricultural_data') }}" style="text-decoration: none; text-align: center; flex: 1; min-width: 110px; padding: 0.5rem; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px;">
+            <div style="font-size: 0.75rem; color: #64748b; font-weight: 600;">MODULE 3</div>
+            <div style="font-size: 0.82rem; font-weight: 700; color: var(--primary-color);">Agri Database</div>
+            <span style="font-size: 0.7rem; color: #16a34a;"><i class="fa-solid fa-circle-check"></i> SQLite / MySQL</span>
+        </a>
+        <div style="color: #94a3b8;"><i class="fa-solid fa-chevron-right"></i></div>
+
+        <a href="{{ url_for('statistics') }}" style="text-decoration: none; text-align: center; flex: 1; min-width: 110px; padding: 0.5rem; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px;">
+            <div style="font-size: 0.75rem; color: #64748b; font-weight: 600;">MODULE 4</div>
+            <div style="font-size: 0.82rem; font-weight: 700; color: var(--primary-color);">Statistics</div>
+            <span style="font-size: 0.7rem; color: #16a34a;"><i class="fa-solid fa-circle-check"></i> Pearson (r)</span>
+        </a>
+        <div style="color: #94a3b8;"><i class="fa-solid fa-chevron-right"></i></div>
+
+        <a href="{{ url_for('crop_analysis') }}" style="text-decoration: none; text-align: center; flex: 1; min-width: 110px; padding: 0.5rem; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px;">
+            <div style="font-size: 0.75rem; color: #64748b; font-weight: 600;">MODULE 5</div>
+            <div style="font-size: 0.82rem; font-weight: 700; color: var(--primary-color);">Crop Analysis</div>
+            <span style="font-size: 0.7rem; color: #16a34a;"><i class="fa-solid fa-circle-check"></i> Yield Rankings</span>
+        </a>
+        <div style="color: #94a3b8;"><i class="fa-solid fa-chevron-right"></i></div>
+
+        <a href="{{ url_for('visualization') }}" style="text-decoration: none; text-align: center; flex: 1; min-width: 110px; padding: 0.5rem; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px;">
+            <div style="font-size: 0.75rem; color: #64748b; font-weight: 600;">MODULE 6</div>
+            <div style="font-size: 0.82rem; font-weight: 700; color: var(--primary-color);">Visualization</div>
+            <span style="font-size: 0.7rem; color: #16a34a;"><i class="fa-solid fa-circle-check"></i> Charts & KPIs</span>
+        </a>
+        <div style="color: #94a3b8;"><i class="fa-solid fa-chevron-right"></i></div>
+
+        <a href="{{ url_for('advisory') }}" style="text-decoration: none; text-align: center; flex: 1; min-width: 110px; padding: 0.5rem; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px;">
+            <div style="font-size: 0.75rem; color: #64748b; font-weight: 600;">MODULE 7</div>
+            <div style="font-size: 0.82rem; font-weight: 700; color: var(--primary-color);">Advisory</div>
+            <span style="font-size: 0.7rem; color: #16a34a;"><i class="fa-solid fa-circle-check"></i> Interventions</span>
+        </a>
+    </div>
+
+    <div style="margin-top: 0.8rem; font-size: 0.82rem; color: #475569; background: #f8fafc; padding: 0.5rem 0.8rem; border-radius: 6px;">
+        <i class="fa-solid fa-quote-left" style="color: var(--primary-light);"></i> <em>The collected agricultural data will first be cleaned and prepared. Important variables will then be analysed using statistical techniques and visualizations. The final results will be presented as understandable crop-yield insights.</em>
+    </div>
+</div>
+
+{% if metrics.total_records == 0 %}
+<div class="empty-state-card">
+    <div class="empty-state-icon">
+        <i class="fa-solid fa-cloud-arrow-up"></i>
+    </div>
+    <h3 class="empty-state-title">No Agricultural Dataset Uploaded Yet</h3>
+    <p class="empty-state-text">
+        The dashboard is waiting for your agricultural dataset. Baseline sample datasets have been removed and nothing is shown until you provide your dataset. 
+        Please upload a dataset file (<strong>.csv</strong>, <strong>.xlsx</strong>, or <strong>.xls</strong>) to generate real-time metrics, yield distribution charts, and environmental insights.
+    </p>
+    <div class="empty-state-actions">
+        <a href="{{ url_for('dataset_management') }}" class="btn btn-primary" style="padding: 0.8rem 1.6rem; font-size: 1rem;">
+            <i class="fa-solid fa-cloud-arrow-up"></i> Upload Agricultural Dataset
+        </a>
+    </div>
+    <div class="empty-state-badges">
+        <span class="empty-state-badge"><i class="fa-solid fa-file-csv"></i> CSV Files</span>
+        <span class="empty-state-badge"><i class="fa-solid fa-file-excel"></i> Excel (.xlsx / .xls)</span>
+        <span class="empty-state-badge"><i class="fa-solid fa-wand-magic-sparkles"></i> Auto Column Mapping</span>
+        <span class="empty-state-badge"><i class="fa-solid fa-shield-halved"></i> Quality Validation</span>
+    </div>
+</div>
+{% else %}
+<!-- Key Metric Cards -->
+<div class="metrics-grid">
+    <div class="metric-card">
+        <div class="metric-icon"><i class="fa-solid fa-database"></i></div>
+        <div class="metric-info">
+            <h4>Total Records</h4>
+            <div class="metric-value">{{ metrics.total_records }}</div>
+        </div>
+    </div>
+    <div class="metric-card">
+        <div class="metric-icon"><i class="fa-solid fa-seedling"></i></div>
+        <div class="metric-info">
+            <h4>Number of Crops</h4>
+            <div class="metric-value">{{ metrics.total_crops }}</div>
+        </div>
+    </div>
+    <div class="metric-card">
+        <div class="metric-icon"><i class="fa-solid fa-chart-line"></i></div>
+        <div class="metric-info">
+            <h4>Average Yield</h4>
+            <div class="metric-value">{{ metrics.avg_yield }} <span style="font-size: 0.9rem; font-weight: 400;">t/ha</span></div>
+        </div>
+    </div>
+    <div class="metric-card">
+        <div class="metric-icon"><i class="fa-solid fa-cloud-showers-heavy"></i></div>
+        <div class="metric-info">
+            <h4>Average Rainfall</h4>
+            <div class="metric-value">
+                {% if metrics.has_rainfall %}{{ metrics.avg_rainfall }} <span style="font-size: 0.9rem; font-weight: 400;">mm</span>{% else %}N/A{% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Overview Charts Grid -->
+<div class="charts-grid">
+    <!-- Chart 1: Crop Type vs Average Yield -->
+    <div class="chart-card">
+        <div class="chart-header">
+            <h3>Chart 1: Crop Type vs Average Yield</h3>
+        </div>
+        <div class="chart-container">
+            <canvas id="dashCropYieldChart"></canvas>
+        </div>
+    </div>
+
+    <!-- Chart 2: Rainfall vs Yield Scatter -->
+    <div class="chart-card">
+        <div class="chart-header">
+            <h3>Chart 2: Rainfall vs Yield Scatter</h3>
+        </div>
+        {% if chart_data.has_rainfall %}
+        <div class="chart-container">
+            <canvas id="dashRainfallChart"></canvas>
+        </div>
+        {% else %}
+        <div style="height: 280px; display: flex; align-items: center; justify-content: center; background: #f8fafc; border-radius: 8px; color: var(--text-muted); font-size: 0.9rem;">
+            <i class="fa-solid fa-info-circle" style="margin-right: 0.5rem;"></i> Rainfall data is not available in the current dataset.
+        </div>
+        {% endif %}
+    </div>
+
+    <!-- Chart 3: Temp vs Yield Scatter -->
+    <div class="chart-card">
+        <div class="chart-header">
+            <h3>Chart 3: Temperature vs Yield Scatter</h3>
+        </div>
+        {% if chart_data.has_temp %}
+        <div class="chart-container">
+            <canvas id="dashTempChart"></canvas>
+        </div>
+        {% else %}
+        <div style="height: 280px; display: flex; align-items: center; justify-content: center; background: #f8fafc; border-radius: 8px; color: var(--text-muted); font-size: 0.9rem;">
+            <i class="fa-solid fa-info-circle" style="margin-right: 0.5rem;"></i> Temperature data is not available in the current dataset.
+        </div>
+        {% endif %}
+    </div>
+
+    <!-- Chart 4: Fertilizer vs Yield Scatter -->
+    <div class="chart-card">
+        <div class="chart-header">
+            <h3>Chart 4: Fertilizer Usage vs Yield</h3>
+        </div>
+        {% if chart_data.has_fert %}
+        <div class="chart-container">
+            <canvas id="dashFertChart"></canvas>
+        </div>
+        {% else %}
+        <div style="height: 280px; display: flex; align-items: center; justify-content: center; background: #f8fafc; border-radius: 8px; color: var(--text-muted); font-size: 0.9rem;">
+            <i class="fa-solid fa-info-circle" style="margin-right: 0.5rem;"></i> Fertilizer data is not available in the current dataset.
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endif %}
+
+{% endblock %}
+
+{% block scripts %}
+{% if metrics.total_records > 0 %}
+<script>
+    const dashboardChartData = {{ chart_data | tojson }};
+</script>
+{% endif %}
+{% endblock %}

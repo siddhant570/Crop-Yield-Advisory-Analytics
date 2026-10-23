@@ -1,0 +1,227 @@
+{% extends "base.html" %}
+
+{% block title %}Module 5: Crop Yield Analysis | Crop Yield Advisory Analytics{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <div class="page-title">
+        <h2><i class="fa-solid fa-wheat-awn"></i> Module 5: Crop Yield Analysis</h2>
+        <p>Analyze which crops yield the best under which soil types, seasons, and irrigation methods using statistical aggregation.</p>
+    </div>
+    <div style="display: flex; gap: 0.8rem; align-items: center;">
+        <span class="status-badge badge-strong"><i class="fa-solid fa-circle-check"></i> Pandas Group-By Aggregation</span>
+    </div>
+</div>
+
+{% if dataset_sources and dataset_sources | length > 0 %}
+<form method="GET" action="{{ url_for('crop_analysis') }}" class="filter-bar" style="margin-bottom: 1rem;">
+    <div style="display: flex; align-items: center; gap: 0.8rem;">
+        <label for="datasetSelectCA" style="font-weight: 600; color: var(--primary-color);">
+            <i class="fa-solid fa-database"></i> Active Dataset:
+        </label>
+        <select id="datasetSelectCA" name="dataset" class="form-select" onchange="this.form.submit()" style="min-width: 240px;">
+            <option value="">All Imported Datasets</option>
+            {% for ds in dataset_sources %}
+                <option value="{{ ds.dataset_name }}" {% if selected_dataset == ds.dataset_name %}selected{% endif %}>
+                    {{ ds.dataset_name }} ({{ ds.record_count }} records)
+                </option>
+            {% endfor %}
+        </select>
+    </div>
+    <div style="font-size: 0.85rem; color: var(--text-muted);">
+        Showing analysis for: <strong>{{ selected_dataset if selected_dataset else 'All Combined Datasets' }}</strong>
+    </div>
+</form>
+{% endif %}
+
+{% if not has_data %}
+<div class="empty-state-card">
+    <div class="empty-state-icon">
+        <i class="fa-solid fa-wheat-awn"></i>
+    </div>
+    <h3 class="empty-state-title">No Dataset Loaded for Crop Yield Analysis</h3>
+    <p class="empty-state-text">
+        Crop yield analysis requires an active agricultural dataset with yield records.
+        Please upload your dataset file (<strong>.csv</strong>, <strong>.xlsx</strong>, or <strong>.xls</strong>) in the Datasets module.
+    </p>
+    <div class="empty-state-actions">
+        <a href="{{ url_for('dataset_management') }}" class="btn btn-primary" style="padding: 0.8rem 1.6rem; font-size: 1rem;">
+            <i class="fa-solid fa-cloud-arrow-up"></i> Upload Agricultural Dataset
+        </a>
+    </div>
+    <div class="empty-state-badges">
+        <span class="empty-state-badge"><i class="fa-solid fa-ranking-star"></i> Crop Yield Rankings</span>
+        <span class="empty-state-badge"><i class="fa-solid fa-mountain"></i> Soil-wise Analysis</span>
+        <span class="empty-state-badge"><i class="fa-solid fa-calendar-days"></i> Season Comparison</span>
+    </div>
+</div>
+{% else %}
+
+<!-- Top Insights KPI Cards -->
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.2rem; margin-bottom: 1.5rem;">
+    <div class="card" style="text-align: center; padding: 1.2rem;">
+        <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px;">Highest Yielding Crop</div>
+        <div style="font-size: 1.6rem; font-weight: 800; color: var(--primary-color); margin: 0.3rem 0;">{{ top_crop }}</div>
+        <div style="font-size: 0.72rem; color: var(--text-muted);">Based on average yield (tons/ha)</div>
+    </div>
+    <div class="card" style="text-align: center; padding: 1.2rem;">
+        <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px;">Best Soil Type</div>
+        <div style="font-size: 1.6rem; font-weight: 800; color: #b45309; margin: 0.3rem 0;">{{ top_soil }}</div>
+        <div style="font-size: 0.72rem; color: var(--text-muted);">Highest average crop productivity</div>
+    </div>
+    <div class="card" style="text-align: center; padding: 1.2rem;">
+        <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px;">Best Season</div>
+        <div style="font-size: 1.6rem; font-weight: 800; color: #0284c7; margin: 0.3rem 0;">{{ top_season }}</div>
+        <div style="font-size: 0.72rem; color: var(--text-muted);">Season with highest average yield</div>
+    </div>
+    <div class="card" style="text-align: center; padding: 1.2rem;">
+        <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px;">Best Irrigation</div>
+        <div style="font-size: 1.6rem; font-weight: 800; color: #7c3aed; margin: 0.3rem 0;">{{ top_irrigation }}</div>
+        <div style="font-size: 0.72rem; color: var(--text-muted);">Most productive irrigation method</div>
+    </div>
+</div>
+
+<!-- Section 1: Crop Yield Ranking Table -->
+<div class="card" style="margin-bottom: 1.5rem;">
+    <div class="card-header" style="background: linear-gradient(135deg, #1b4332 0%, #2d6a4f 100%); color: white; border-radius: 8px 8px 0 0;">
+        <h3 style="color: white; margin: 0; font-size: 1.05rem;"><i class="fa-solid fa-ranking-star"></i> Crop Yield Rankings (Average Yield — Highest to Lowest)</h3>
+    </div>
+    <div class="card-body" style="padding: 0;">
+        <table class="data-table" style="width: 100%; border-collapse: collapse;">
+            <thead>
+                <tr>
+                    <th style="padding: 0.8rem 1rem; text-align: left;">Rank</th>
+                    <th style="padding: 0.8rem 1rem; text-align: left;">Crop Type</th>
+                    <th style="padding: 0.8rem 1rem; text-align: center;">Avg Yield (t/ha)</th>
+                    <th style="padding: 0.8rem 1rem; text-align: center;">Median Yield</th>
+                    <th style="padding: 0.8rem 1rem; text-align: center;">Min Yield</th>
+                    <th style="padding: 0.8rem 1rem; text-align: center;">Max Yield</th>
+                    <th style="padding: 0.8rem 1rem; text-align: center;">Records</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for crop in crop_yield_table %}
+                <tr{% if loop.index == 1 %} style="background: #f0fdf4; font-weight: 600;"{% endif %}>
+                    <td style="padding: 0.7rem 1rem;">
+                        {% if loop.index == 1 %}<i class="fa-solid fa-trophy" style="color: #eab308;"></i>{% endif %}
+                        #{{ loop.index }}
+                    </td>
+                    <td style="padding: 0.7rem 1rem; font-weight: 700;">{{ crop.crop_type }}</td>
+                    <td style="padding: 0.7rem 1rem; text-align: center; color: var(--primary-color); font-weight: 700;">{{ crop.avg_yield }}</td>
+                    <td style="padding: 0.7rem 1rem; text-align: center;">{{ crop.median_yield }}</td>
+                    <td style="padding: 0.7rem 1rem; text-align: center;">{{ crop.min_yield }}</td>
+                    <td style="padding: 0.7rem 1rem; text-align: center;">{{ crop.max_yield }}</td>
+                    <td style="padding: 0.7rem 1rem; text-align: center;">{{ crop.records }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Two-Column Analysis Grid -->
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
+
+    <!-- Section 2: Yield by Soil Type -->
+    <div class="card">
+        <div class="card-header" style="background: linear-gradient(135deg, #78350f 0%, #b45309 100%); color: white; border-radius: 8px 8px 0 0;">
+            <h3 style="color: white; margin: 0; font-size: 1rem;"><i class="fa-solid fa-mountain"></i> Yield by Soil Type</h3>
+        </div>
+        <div class="card-body" style="padding: 0;">
+            <table class="data-table" style="width: 100%; border-collapse: collapse;">
+                <thead>
+                    <tr>
+                        <th style="padding: 0.7rem 0.8rem; text-align: left;">Soil Type</th>
+                        <th style="padding: 0.7rem 0.8rem; text-align: center;">Avg Yield</th>
+                        <th style="padding: 0.7rem 0.8rem; text-align: center;">Median</th>
+                        <th style="padding: 0.7rem 0.8rem; text-align: center;">Records</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for s in soil_yield_table %}
+                    <tr{% if loop.index == 1 %} style="background: #fffbeb; font-weight: 600;"{% endif %}>
+                        <td style="padding: 0.6rem 0.8rem; font-weight: 600;">{{ s.soil }}</td>
+                        <td style="padding: 0.6rem 0.8rem; text-align: center; font-weight: 700; color: #b45309;">{{ s.avg_yield }}</td>
+                        <td style="padding: 0.6rem 0.8rem; text-align: center;">{{ s.median_yield }}</td>
+                        <td style="padding: 0.6rem 0.8rem; text-align: center;">{{ s.records }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Section 3: Yield by Season -->
+    <div class="card">
+        <div class="card-header" style="background: linear-gradient(135deg, #0c4a6e 0%, #0284c7 100%); color: white; border-radius: 8px 8px 0 0;">
+            <h3 style="color: white; margin: 0; font-size: 1rem;"><i class="fa-solid fa-calendar-days"></i> Yield by Season</h3>
+        </div>
+        <div class="card-body" style="padding: 0;">
+            <table class="data-table" style="width: 100%; border-collapse: collapse;">
+                <thead>
+                    <tr>
+                        <th style="padding: 0.7rem 0.8rem; text-align: left;">Season</th>
+                        <th style="padding: 0.7rem 0.8rem; text-align: center;">Avg Yield</th>
+                        <th style="padding: 0.7rem 0.8rem; text-align: center;">Median</th>
+                        <th style="padding: 0.7rem 0.8rem; text-align: center;">Records</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for s in season_yield_table %}
+                    <tr{% if loop.index == 1 %} style="background: #f0f9ff; font-weight: 600;"{% endif %}>
+                        <td style="padding: 0.6rem 0.8rem; font-weight: 600;">{{ s.season }}</td>
+                        <td style="padding: 0.6rem 0.8rem; text-align: center; font-weight: 700; color: #0284c7;">{{ s.avg_yield }}</td>
+                        <td style="padding: 0.6rem 0.8rem; text-align: center;">{{ s.median_yield }}</td>
+                        <td style="padding: 0.6rem 0.8rem; text-align: center;">{{ s.records }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Section 4: Yield by Irrigation Method (Full Width) -->
+<div class="card" style="margin-bottom: 1.5rem;">
+    <div class="card-header" style="background: linear-gradient(135deg, #4c1d95 0%, #7c3aed 100%); color: white; border-radius: 8px 8px 0 0;">
+        <h3 style="color: white; margin: 0; font-size: 1rem;"><i class="fa-solid fa-water"></i> Yield by Irrigation Method</h3>
+    </div>
+    <div class="card-body" style="padding: 0;">
+        <table class="data-table" style="width: 100%; border-collapse: collapse;">
+            <thead>
+                <tr>
+                    <th style="padding: 0.7rem 1rem; text-align: left;">Irrigation Method</th>
+                    <th style="padding: 0.7rem 1rem; text-align: center;">Avg Yield (t/ha)</th>
+                    <th style="padding: 0.7rem 1rem; text-align: center;">Median Yield</th>
+                    <th style="padding: 0.7rem 1rem; text-align: center;">Records</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in irrigation_yield_table %}
+                <tr{% if loop.index == 1 %} style="background: #f5f3ff; font-weight: 600;"{% endif %}>
+                    <td style="padding: 0.6rem 1rem; font-weight: 600;">{{ i.irrigation }}</td>
+                    <td style="padding: 0.6rem 1rem; text-align: center; font-weight: 700; color: #7c3aed;">{{ i.avg_yield }}</td>
+                    <td style="padding: 0.6rem 1rem; text-align: center;">{{ i.median_yield }}</td>
+                    <td style="padding: 0.6rem 1rem; text-align: center;">{{ i.records }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Insight Summary -->
+<div class="card" style="border-left: 4px solid var(--primary-color);">
+    <div class="card-body" style="padding: 1.2rem;">
+        <h4 style="margin: 0 0 0.5rem 0; color: var(--primary-color);"><i class="fa-solid fa-lightbulb"></i> Key Insights from Yield Analysis</h4>
+        <ul style="margin: 0; padding-left: 1.2rem; color: var(--text-muted); font-size: 0.9rem; line-height: 1.8;">
+            <li><strong>{{ top_crop }}</strong> is the highest yielding crop type in the dataset (by average yield in tons/hectare).</li>
+            <li><strong>{{ top_soil }}</strong> soil produces the best average crop yield across all crops.</li>
+            <li>The <strong>{{ top_season }}</strong> cropping season delivers the highest average productivity.</li>
+            <li><strong>{{ top_irrigation }}</strong> irrigation method is associated with the highest average yield.</li>
+        </ul>
+    </div>
+</div>
+
+{% endif %}
+{% endblock %}

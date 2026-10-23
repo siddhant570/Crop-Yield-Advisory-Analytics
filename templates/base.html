@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Crop Yield Advisory Analytics{% endblock %}</title>
+    <!-- FontAwesome & Chart.js -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="navbar-brand-header">
+        <div class="brand-wrapper">
+            <div class="brand-title-group">
+                <h1><i class="fa-solid fa-wheat-awn"></i> CROP YIELD ADVISORY ANALYTICS</h1>
+                <div class="brand-subtitle">Academic Decision Support & Agricultural Data Analytics System</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Bar (Syllabus Workflow Order) -->
+    <nav class="nav-bar">
+        <ul class="nav-container">
+            <li class="nav-item">
+                <a href="{{ url_for('dashboard') }}" class="nav-link {% if request.endpoint == 'dashboard' %}active{% endif %}">
+                    <i class="fa-solid fa-gauge-high"></i> Dashboard
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="{{ url_for('dataset_management') }}" class="nav-link {% if request.endpoint == 'dataset_management' %}active{% endif %}">
+                    <i class="fa-solid fa-cloud-arrow-up"></i> 1. Data Collection
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="{{ url_for('agricultural_data') }}" class="nav-link {% if request.endpoint == 'agricultural_data' %}active{% endif %}">
+                    <i class="fa-solid fa-database"></i> 2. Cleaning & DB
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="{{ url_for('statistics') }}" class="nav-link {% if request.endpoint == 'statistics' %}active{% endif %}">
+                    <i class="fa-solid fa-calculator"></i> 3. Statistics
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="{{ url_for('crop_analysis') }}" class="nav-link {% if request.endpoint == 'crop_analysis' %}active{% endif %}">
+                    <i class="fa-solid fa-wheat-awn"></i> 4. Crop Analysis
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="{{ url_for('visualization') }}" class="nav-link {% if request.endpoint == 'visualization' %}active{% endif %}">
+                    <i class="fa-solid fa-chart-pie"></i> 5. Visuals
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="{{ url_for('advisory') }}" class="nav-link {% if request.endpoint == 'advisory' %}active{% endif %}">
+                    <i class="fa-solid fa-lightbulb"></i> 6. Advisory
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="{{ url_for('about') }}" class="nav-link {% if request.endpoint == 'about' %}active{% endif %}">
+                    <i class="fa-solid fa-circle-info"></i> About
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Flash Messages Container -->
+    <div class="main-content" style="margin-bottom: 0; padding-bottom: 0;">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }}">
+                        <i class="fa-solid fa-circle-info"></i> {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Crop Yield Advisory Analytics | Academic Prototype (Review 1 Stage)</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    {% block scripts %}{% endblock %}
+</body>
+</html>

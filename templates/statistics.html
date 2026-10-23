@@ -1,0 +1,188 @@
+{% extends "base.html" %}
+
+{% block title %}Statistical Analysis | Crop Yield Advisory Analytics{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <div class="page-title">
+        <h2><i class="fa-solid fa-calculator"></i> Module 4: Statistical Analysis</h2>
+        <p>Descriptive statistics (Mean, Median, Std Dev) and bivariate Pearson correlation analysis powered by Python Pandas & NumPy.</p>
+    </div>
+</div>
+
+{% if not has_data %}
+<div class="empty-state-card">
+    <div class="empty-state-icon">
+        <i class="fa-solid fa-calculator"></i>
+    </div>
+    <h3 class="empty-state-title">No Dataset Loaded for Statistical Analysis</h3>
+    <p class="empty-state-text">
+        Descriptive statistics (Mean, Median, Standard Deviation) and bivariate Pearson correlation analysis require an active agricultural dataset. 
+        Baseline sample datasets have been removed and nothing is shown until you provide your dataset. 
+        Please upload your dataset file (<strong>.csv</strong>, <strong>.xlsx</strong>, or <strong>.xls</strong>) in the Datasets module to compute statistical indicators.
+    </p>
+    <div class="empty-state-actions">
+        <a href="{{ url_for('dataset_management') }}" class="btn btn-primary" style="padding: 0.8rem 1.6rem; font-size: 1rem;">
+            <i class="fa-solid fa-cloud-arrow-up"></i> Upload Agricultural Dataset
+        </a>
+    </div>
+    <div class="empty-state-badges">
+        <span class="empty-state-badge"><i class="fa-solid fa-chart-column"></i> Mean, Median & Std Dev</span>
+        <span class="empty-state-badge"><i class="fa-solid fa-diagram-project"></i> Pearson Correlation (r)</span>
+        <span class="empty-state-badge"><i class="fa-solid fa-file-excel"></i> Excel & CSV Supported</span>
+    </div>
+</div>
+{% else %}
+<!-- Academic Disclaimer Callout -->
+<div class="academic-note">
+    <i class="fa-solid fa-circle-info" style="color: var(--primary-light); font-size: 1.1rem; margin-right: 0.5rem;"></i>
+    <strong>Academic Note on Correlation:</strong> Correlation indicates the strength and direction of the relationship between two numerical variables. It does not by itself establish causation.
+</div>
+
+<!-- Descriptive Statistics Cards -->
+<h3 style="color: var(--primary-color); margin-bottom: 1rem;"><i class="fa-solid fa-chart-column"></i> Descriptive Statistics Summary</h3>
+
+<div class="stats-summary-grid">
+    <!-- Rainfall -->
+    <div class="stats-card">
+        <h4><i class="fa-solid fa-cloud-rain"></i> Rainfall (mm)</h4>
+        {% if stats.rainfall.available %}
+        <div class="stat-row">
+            <span class="stat-label">Mean (Average)</span>
+            <span class="stat-val">{{ stats.rainfall.mean }} mm</span>
+        </div>
+        <div class="stat-row">
+            <span class="stat-label">Median</span>
+            <span class="stat-val">{{ stats.rainfall.median }} mm</span>
+        </div>
+        <div class="stat-row">
+            <span class="stat-label">Std Deviation</span>
+            <span class="stat-val">{{ stats.rainfall.std }}</span>
+        </div>
+        <div class="stat-row">
+            <span class="stat-label">Min / Max</span>
+            <span class="stat-val">{{ stats.rainfall.min }} / {{ stats.rainfall.max }}</span>
+        </div>
+        {% else %}
+        <p style="font-size: 0.88rem; color: var(--text-muted); margin-top: 0.5rem;">
+            <i class="fa-solid fa-info-circle"></i> {{ stats.rainfall.message }}
+        </p>
+        {% endif %}
+    </div>
+
+    <!-- Temperature -->
+    <div class="stats-card">
+        <h4><i class="fa-solid fa-temperature-high"></i> Temperature (°C)</h4>
+        {% if stats.temperature.available %}
+        <div class="stat-row">
+            <span class="stat-label">Mean (Average)</span>
+            <span class="stat-val">{{ stats.temperature.mean }} °C</span>
+        </div>
+        <div class="stat-row">
+            <span class="stat-label">Median</span>
+            <span class="stat-val">{{ stats.temperature.median }} °C</span>
+        </div>
+        <div class="stat-row">
+            <span class="stat-label">Std Deviation</span>
+            <span class="stat-val">{{ stats.temperature.std }}</span>
+        </div>
+        <div class="stat-row">
+            <span class="stat-label">Min / Max</span>
+            <span class="stat-val">{{ stats.temperature.min }} / {{ stats.temperature.max }}</span>
+        </div>
+        {% else %}
+        <p style="font-size: 0.88rem; color: var(--text-muted); margin-top: 0.5rem;">
+            <i class="fa-solid fa-info-circle"></i> {{ stats.temperature.message }}
+        </p>
+        {% endif %}
+    </div>
+
+    <!-- Fertilizer -->
+    <div class="stats-card">
+        <h4><i class="fa-solid fa-flask"></i> Fertilizer Usage (kg/ha)</h4>
+        {% if stats.fertilizer.available %}
+        <div class="stat-row">
+            <span class="stat-label">Mean (Average)</span>
+            <span class="stat-val">{{ stats.fertilizer.mean }} kg/ha</span>
+        </div>
+        <div class="stat-row">
+            <span class="stat-label">Median</span>
+            <span class="stat-val">{{ stats.fertilizer.median }} kg/ha</span>
+        </div>
+        <div class="stat-row">
+            <span class="stat-label">Std Deviation</span>
+            <span class="stat-val">{{ stats.fertilizer.std }}</span>
+        </div>
+        <div class="stat-row">
+            <span class="stat-label">Min / Max</span>
+            <span class="stat-val">{{ stats.fertilizer.min }} / {{ stats.fertilizer.max }}</span>
+        </div>
+        {% else %}
+        <p style="font-size: 0.88rem; color: var(--text-muted); margin-top: 0.5rem;">
+            <i class="fa-solid fa-info-circle"></i> {{ stats.fertilizer.message }}
+        </p>
+        {% endif %}
+    </div>
+
+    <!-- Crop Yield -->
+    <div class="stats-card">
+        <h4><i class="fa-solid fa-wheat-awn"></i> Crop Yield (tons/ha)</h4>
+        {% if stats.yield_value.available %}
+        <div class="stat-row">
+            <span class="stat-label">Mean (Average)</span>
+            <span class="stat-val">{{ stats.yield_value.mean }} t/ha</span>
+        </div>
+        <div class="stat-row">
+            <span class="stat-label">Median</span>
+            <span class="stat-val">{{ stats.yield_value.median }} t/ha</span>
+        </div>
+        <div class="stat-row">
+            <span class="stat-label">Std Deviation</span>
+            <span class="stat-val">{{ stats.yield_value.std }}</span>
+        </div>
+        <div class="stat-row">
+            <span class="stat-label">Min / Max</span>
+            <span class="stat-val">{{ stats.yield_value.min }} / {{ stats.yield_value.max }}</span>
+        </div>
+        {% else %}
+        <p style="font-size: 0.88rem; color: var(--text-muted); margin-top: 0.5rem;">
+            <i class="fa-solid fa-info-circle"></i> {{ stats.yield_value.message }}
+        </p>
+        {% endif %}
+    </div>
+</div>
+
+<!-- Pearson Correlation Analysis -->
+<h3 style="color: var(--primary-color); margin-top: 2rem; margin-bottom: 1rem;">
+    <i class="fa-solid fa-diagram-project"></i> Pearson Correlation Analysis (Bivariate)
+</h3>
+
+<div class="correlation-grid">
+    {% for corr in correlations %}
+    <div class="corr-card">
+        {% if corr.available %}
+        <div class="corr-header">
+            <span class="corr-title">{{ corr.pair_label }}</span>
+            <span class="badge {{ corr.badge_class }}">{{ corr.strength }}</span>
+        </div>
+        <div style="display: flex; align-items: baseline; gap: 0.6rem; margin-top: 0.5rem;">
+            <div class="corr-value">r = {{ corr.r_value }}</div>
+            <span style="font-size: 0.85rem; color: var(--text-muted);">Pearson Coefficient</span>
+        </div>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">
+            Measures linear dependency between {{ corr.var1 }} and {{ corr.var2 }} variables across active dataset records.
+        </p>
+        {% else %}
+        <div class="corr-header">
+            <span class="corr-title">{{ corr.pair_label }}</span>
+            <span class="badge badge-neutral">Not Available</span>
+        </div>
+        <p style="font-size: 0.88rem; color: var(--text-muted); margin-top: 0.8rem;">
+            <i class="fa-solid fa-info-circle"></i> {{ corr.message }}
+        </p>
+        {% endif %}
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+{% endblock %}

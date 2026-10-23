@@ -1,0 +1,301 @@
+State_Name,Crop_Name,Season,Soil,Rainfall,Temperature,Fertilizer,Irrigation,Crop_Yield
+Maharashtra,Jowar,Kharif,Shallow/Murum,860.3,28.4,73.0,0,870.4
+Maharashtra,Black Gram,Kharif,Sandy Loam,731.4,30.2,23.6,0,379.5
+Maharashtra,Maize,Kharif,Medium Black,776.2,26.3,100.7,0,1879.6
+Maharashtra,Jowar,Kharif,Medium Black,789.9,28.1,70.3,0,1233.0
+Maharashtra,Groundnut,Summer,Black (Regur),23.0,32.7,59.9,1,2100.4
+Maharashtra,Soybean,Kharif,Black (Regur),943.6,26.4,90.2,0,999.6
+Maharashtra,Rabi Jowar,Rabi,Shallow/Murum,73.0,20.3,53.5,0,634.8
+Maharashtra,Wheat,Rabi,Medium Black,61.8,19.1,147.2,1,2396.8
+Maharashtra,Green Gram,Kharif,Medium Black,861.8,29.4,34.1,0,411.8
+Maharashtra,Green Gram,Kharif,Shallow/Murum,654.6,27.3,43.9,0,350.8
+Maharashtra,Groundnut,Summer,Medium Black,54.6,35.1,51.4,0,1016.8
+Maharashtra,Groundnut,Summer,Medium Black,59.5,33.3,37.6,0,808.0
+Maharashtra,Groundnut,Summer,Shallow/Murum,27.2,34.4,48.8,0,782.5
+Maharashtra,Wheat,Rabi,Shallow/Murum,79.2,24.8,149.1,0,1233.1
+Maharashtra,Cotton,Kharif,Black (Regur),719.6,29.2,123.6,1,560.6
+Maharashtra,Green Gram,Kharif,Medium Black,622.2,29.8,21.6,0,331.4
+Maharashtra,Rabi Jowar,Rabi,Black (Regur),46.7,22.0,69.9,0,935.7
+Maharashtra,Cotton,Kharif,Shallow/Murum,652.3,30.0,135.9,1,357.0
+Maharashtra,Sesame,Summer,Medium Black,25.6,34.6,44.9,0,313.1
+Maharashtra,Green Gram,Kharif,Black (Regur),739.4,29.7,31.4,0,448.4
+Maharashtra,Wheat,Rabi,Black (Regur),84.6,19.4,149.9,1,2592.7
+Maharashtra,Jowar,Kharif,Medium Black,609.4,28.0,88.2,0,1074.1
+Maharashtra,Maize,Kharif,Medium Black,711.1,27.5,141.3,0,2064.6
+Maharashtra,Chickpea,Rabi,Medium Black,53.3,24.8,66.9,0,839.9
+Maharashtra,Sesame,Summer,Shallow/Murum,42.7,32.8,46.1,0,261.6
+Maharashtra,Jowar,Kharif,Medium Black,647.5,28.3,62.5,0,1027.4
+Maharashtra,Tur,Kharif,Black (Regur),985.8,27.3,55.3,0,617.6
+Maharashtra,Cotton,Kharif,Medium Black,863.2,26.9,138.3,1,566.7
+Maharashtra,Black Gram,Kharif,Black (Regur),689.6,29.5,50.0,0,533.4
+Maharashtra,Black Gram,Kharif,Black (Regur),888.6,31.0,37.3,0,467.4
+Maharashtra,Soybean,Kharif,Sandy Loam,1042.6,29.8,106.3,0,780.2
+Maharashtra,Chickpea,Rabi,Medium Black,70.0,24.8,42.2,0,559.9
+Maharashtra,Tur,Kharif,Shallow/Murum,793.4,28.9,45.4,0,487.8
+Maharashtra,Chickpea,Rabi,Black (Regur),29.4,23.7,60.2,1,1392.9
+Maharashtra,Cotton,Kharif,Sandy Loam,835.2,30.9,148.9,1,556.7
+Maharashtra,Green Gram,Kharif,Sandy Loam,757.4,27.7,23.0,0,340.7
+Maharashtra,Wheat,Rabi,Medium Black,49.1,19.6,125.6,0,1347.7
+Maharashtra,Black Gram,Kharif,Medium Black,795.5,31.5,25.4,0,404.8
+Maharashtra,Soybean,Kharif,Shallow/Murum,985.7,29.9,64.9,0,604.4
+Maharashtra,Chickpea,Rabi,Shallow/Murum,75.2,20.5,65.3,1,1036.6
+Maharashtra,Black Gram,Kharif,Shallow/Murum,787.6,30.6,26.1,0,316.7
+Maharashtra,Rabi Jowar,Rabi,Medium Black,38.6,25.7,58.8,0,865.4
+Maharashtra,Tur,Kharif,Medium Black,903.0,28.3,63.2,0,657.5
+Maharashtra,Groundnut,Summer,Black (Regur),48.2,33.4,45.9,0,1039.2
+Maharashtra,Cotton,Kharif,Shallow/Murum,905.4,28.7,157.8,0,343.7
+Maharashtra,Black Gram,Kharif,Black (Regur),897.7,31.5,33.8,0,377.6
+Maharashtra,Rabi Jowar,Rabi,Black (Regur),25.7,24.7,51.4,0,860.1
+Maharashtra,Black Gram,Kharif,Medium Black,857.3,28.0,40.8,0,412.2
+Maharashtra,Green Gram,Kharif,Medium Black,823.8,28.0,41.1,0,447.4
+Maharashtra,Soybean,Kharif,Medium Black,954.3,27.6,106.7,1,1508.8
+Maharashtra,Soybean,Kharif,Black (Regur),792.0,29.5,72.3,0,861.1
+Maharashtra,Green Gram,Kharif,Shallow/Murum,655.5,27.3,34.5,0,346.3
+Maharashtra,Rabi Jowar,Rabi,Shallow/Murum,29.9,23.1,56.4,0,638.2
+Maharashtra,Groundnut,Summer,Sandy Loam,13.4,33.2,45.2,0,810.3
+Maharashtra,Chickpea,Rabi,Medium Black,46.4,23.1,44.8,0,607.1
+Maharashtra,Wheat,Rabi,Medium Black,24.8,23.6,112.4,1,2336.4
+Maharashtra,Cotton,Kharif,Medium Black,983.8,30.4,101.1,0,306.1
+Maharashtra,Maize,Kharif,Shallow/Murum,888.5,29.5,145.2,1,2297.9
+Maharashtra,Cotton,Kharif,Black (Regur),975.2,30.4,146.5,1,517.4
+Maharashtra,Soybean,Kharif,Medium Black,842.4,27.4,105.3,0,923.0
+Maharashtra,Wheat,Rabi,Shallow/Murum,70.5,20.3,127.1,1,1761.4
+Maharashtra,Green Gram,Kharif,Shallow/Murum,761.5,28.9,33.1,0,379.1
+Maharashtra,Soybean,Kharif,Shallow/Murum,854.8,28.3,106.9,1,991.1
+Maharashtra,Soybean,Kharif,Black (Regur),1073.1,27.2,103.1,0,902.5
+Maharashtra,Groundnut,Summer,Shallow/Murum,47.2,35.4,41.6,0,695.0
+Maharashtra,Green Gram,Kharif,Black (Regur),615.4,31.6,34.3,0,463.3
+Maharashtra,Rabi Jowar,Rabi,Medium Black,34.1,27.0,55.0,0,713.4
+Maharashtra,Cotton,Kharif,Black (Regur),726.8,31.0,120.8,1,499.7
+Maharashtra,Cotton,Kharif,Medium Black,724.1,28.7,138.4,1,522.6
+Maharashtra,Soybean,Kharif,Medium Black,824.8,27.0,62.9,0,836.1
+Maharashtra,Chickpea,Rabi,Black (Regur),23.4,23.0,49.3,0,653.2
+Maharashtra,Tur,Kharif,Medium Black,803.5,25.6,61.0,0,680.7
+Maharashtra,Green Gram,Kharif,Medium Black,837.2,27.4,35.7,0,433.1
+Maharashtra,Wheat,Rabi,Black (Regur),44.8,23.0,145.0,0,1706.2
+Maharashtra,Rabi Jowar,Rabi,Medium Black,63.6,23.7,44.4,0,692.0
+Maharashtra,Black Gram,Kharif,Black (Regur),891.1,28.4,35.4,0,460.3
+Maharashtra,Rabi Jowar,Rabi,Medium Black,76.3,22.2,55.1,0,834.3
+Maharashtra,Green Gram,Kharif,Shallow/Murum,810.4,27.7,20.3,0,323.5
+Maharashtra,Green Gram,Kharif,Medium Black,798.4,31.6,32.8,0,450.2
+Maharashtra,Black Gram,Kharif,Medium Black,809.9,31.7,35.0,0,432.0
+Maharashtra,Jowar,Kharif,Black (Regur),700.0,27.4,76.0,0,1323.1
+Maharashtra,Tur,Kharif,Black (Regur),1035.3,27.6,42.5,1,818.1
+Maharashtra,Rabi Jowar,Rabi,Black (Regur),47.1,22.4,41.1,0,687.8
+Maharashtra,Cotton,Kharif,Shallow/Murum,680.4,28.1,82.4,1,321.7
+Maharashtra,Maize,Kharif,Black (Regur),743.7,27.7,139.6,0,2002.3
+Maharashtra,Rabi Jowar,Rabi,Black (Regur),74.3,21.0,57.5,0,940.6
+Maharashtra,Groundnut,Summer,Medium Black,16.1,35.1,43.6,0,906.9
+Maharashtra,Maize,Kharif,Black (Regur),861.8,29.9,137.2,0,2547.2
+Maharashtra,Tur,Kharif,Sandy Loam,891.0,29.2,69.1,1,786.0
+Maharashtra,Jowar,Kharif,Shallow/Murum,937.7,26.5,61.3,0,746.5
+Maharashtra,Jowar,Kharif,Medium Black,819.5,26.5,98.6,0,1542.7
+Maharashtra,Chickpea,Rabi,Medium Black,39.3,22.9,44.5,1,982.8
+Maharashtra,Cotton,Kharif,Shallow/Murum,981.4,26.4,118.9,1,386.6
+Maharashtra,Chickpea,Rabi,Medium Black,20.5,21.8,46.3,1,1035.7
+Maharashtra,Jowar,Kharif,Shallow/Murum,658.7,29.0,97.4,0,946.4
+Maharashtra,Groundnut,Summer,Sandy Loam,39.8,30.1,45.5,1,1260.0
+Maharashtra,Tur,Kharif,Medium Black,817.3,29.1,77.6,0,694.7
+Maharashtra,Soybean,Kharif,Shallow/Murum,816.6,25.5,81.6,0,655.9
+Maharashtra,Black Gram,Kharif,Shallow/Murum,724.5,31.6,35.2,0,372.4
+Maharashtra,Green Gram,Kharif,Black (Regur),636.2,27.2,23.6,0,402.4
+Maharashtra,Cotton,Kharif,Black (Regur),661.2,27.6,101.4,1,514.4
+Maharashtra,Green Gram,Kharif,Medium Black,858.0,31.9,29.2,0,407.8
+Maharashtra,Cotton,Kharif,Black (Regur),751.3,26.4,98.6,1,494.6
+Maharashtra,Jowar,Kharif,Sandy Loam,746.7,29.7,87.3,0,1206.5
+Maharashtra,Rabi Jowar,Rabi,Black (Regur),69.8,24.9,45.6,0,817.2
+Maharashtra,Soybean,Kharif,Black (Regur),888.5,28.4,75.0,1,1348.5
+Maharashtra,Soybean,Kharif,Medium Black,1001.4,25.8,74.8,0,860.1
+Maharashtra,Wheat,Rabi,Black (Regur),30.3,24.4,100.2,0,1201.6
+Maharashtra,Soybean,Kharif,Sandy Loam,977.5,27.2,85.9,1,1020.8
+Maharashtra,Black Gram,Kharif,Shallow/Murum,749.5,30.3,35.3,0,344.5
+Maharashtra,Wheat,Rabi,Black (Regur),64.3,22.3,119.5,0,1449.0
+Maharashtra,Maize,Kharif,Medium Black,857.8,27.3,150.6,0,2432.6
+Maharashtra,Chickpea,Rabi,Black (Regur),60.7,22.9,60.0,1,1318.4
+Maharashtra,Sesame,Summer,Sandy Loam,42.1,32.7,50.4,0,274.5
+Maharashtra,Maize,Kharif,Medium Black,747.4,27.2,124.2,0,1926.0
+Maharashtra,Maize,Kharif,Sandy Loam,990.2,29.0,125.6,0,1391.4
+Maharashtra,Maize,Kharif,Sandy Loam,924.0,27.2,106.9,0,1658.0
+Maharashtra,Cotton,Kharif,Medium Black,658.8,27.4,97.9,0,331.3
+Maharashtra,Cotton,Kharif,Medium Black,837.9,27.3,131.3,1,573.7
+Maharashtra,Jowar,Kharif,Shallow/Murum,636.9,30.8,91.8,0,1032.5
+Maharashtra,Wheat,Rabi,Medium Black,86.6,19.2,122.2,0,1480.9
+Maharashtra,Black Gram,Kharif,Black (Regur),824.7,29.4,28.7,0,395.5
+Maharashtra,Sesame,Summer,Sandy Loam,17.7,34.0,51.6,0,292.6
+Maharashtra,Jowar,Kharif,Black (Regur),834.3,28.8,70.9,0,1343.2
+Maharashtra,Soybean,Kharif,Black (Regur),910.4,30.0,109.8,1,1512.6
+Maharashtra,Groundnut,Summer,Black (Regur),41.9,32.2,54.0,0,1188.7
+Maharashtra,Black Gram,Kharif,Sandy Loam,801.7,27.6,21.2,0,340.6
+Maharashtra,Rabi Jowar,Rabi,Medium Black,74.4,26.1,53.3,0,790.1
+Maharashtra,Tur,Kharif,Sandy Loam,762.5,29.8,53.3,1,686.0
+Maharashtra,Wheat,Rabi,Medium Black,29.8,24.7,118.3,0,1223.7
+Maharashtra,Cotton,Kharif,Shallow/Murum,760.1,29.3,111.7,0,291.1
+Maharashtra,Chickpea,Rabi,Medium Black,43.7,21.9,50.2,1,1060.1
+Maharashtra,Tur,Kharif,Black (Regur),948.1,25.0,86.3,0,851.2
+Maharashtra,Soybean,Kharif,Black (Regur),1066.9,29.3,63.5,1,1095.3
+Maharashtra,Sesame,Summer,Medium Black,25.4,30.1,58.4,0,354.7
+Maharashtra,Chickpea,Rabi,Shallow/Murum,57.6,20.9,42.0,0,457.3
+Maharashtra,Tur,Kharif,Black (Regur),708.5,26.2,63.8,0,590.3
+Maharashtra,Tur,Kharif,Black (Regur),1014.6,29.0,83.0,0,700.5
+Maharashtra,Tur,Kharif,Black (Regur),957.8,26.7,86.5,0,866.5
+Maharashtra,Chickpea,Rabi,Shallow/Murum,24.6,25.2,65.7,0,606.6
+Maharashtra,Sesame,Summer,Black (Regur),25.1,33.2,45.1,0,314.0
+Maharashtra,Green Gram,Kharif,Sandy Loam,766.0,30.2,23.8,0,389.2
+Maharashtra,Rabi Jowar,Rabi,Medium Black,58.8,23.0,54.5,0,763.1
+Maharashtra,Groundnut,Summer,Black (Regur),44.1,35.1,39.6,1,1457.5
+Maharashtra,Maize,Kharif,Shallow/Murum,961.7,25.2,104.8,0,1418.4
+Maharashtra,Cotton,Kharif,Sandy Loam,874.0,28.8,134.8,0,381.3
+Maharashtra,Tur,Kharif,Shallow/Murum,914.4,28.6,65.2,0,545.3
+Maharashtra,Chickpea,Rabi,Shallow/Murum,59.3,21.1,63.2,0,622.2
+Maharashtra,Jowar,Kharif,Shallow/Murum,688.3,26.4,61.0,0,851.0
+Maharashtra,Sesame,Summer,Medium Black,40.6,30.5,39.3,0,324.1
+Maharashtra,Chickpea,Rabi,Shallow/Murum,46.9,25.5,56.9,0,571.5
+Maharashtra,Wheat,Rabi,Medium Black,72.0,19.9,124.9,1,2319.7
+Maharashtra,Chickpea,Rabi,Medium Black,26.9,20.1,49.7,0,685.2
+Maharashtra,Soybean,Kharif,Shallow/Murum,837.0,26.0,82.4,0,648.7
+Maharashtra,Maize,Kharif,Black (Regur),871.6,27.9,169.5,1,3971.9
+Maharashtra,Groundnut,Summer,Black (Regur),15.7,34.4,45.0,0,1012.3
+Maharashtra,Wheat,Rabi,Shallow/Murum,76.8,22.3,135.2,0,1084.6
+Maharashtra,Jowar,Kharif,Sandy Loam,722.5,29.3,99.1,0,1270.6
+Maharashtra,Groundnut,Summer,Black (Regur),29.1,33.4,48.2,0,1124.6
+Maharashtra,Jowar,Kharif,Black (Regur),602.1,27.8,97.7,0,1429.6
+Maharashtra,Black Gram,Kharif,Medium Black,872.5,31.0,22.1,0,323.9
+Maharashtra,Wheat,Rabi,Medium Black,83.7,19.4,104.8,0,1128.2
+Maharashtra,Sesame,Summer,Shallow/Murum,36.3,34.6,54.7,0,242.8
+Maharashtra,Maize,Kharif,Black (Regur),891.0,28.1,147.4,0,2483.3
+Maharashtra,Tur,Kharif,Black (Regur),767.6,26.6,83.2,0,738.1
+Maharashtra,Groundnut,Summer,Black (Regur),40.4,34.7,31.0,1,1532.1
+Maharashtra,Black Gram,Kharif,Shallow/Murum,894.1,27.5,36.5,0,296.9
+Maharashtra,Groundnut,Summer,Black (Regur),40.1,32.6,50.7,0,960.3
+Maharashtra,Tur,Kharif,Black (Regur),996.8,28.6,55.0,1,853.3
+Maharashtra,Sesame,Summer,Black (Regur),22.4,30.6,38.7,0,307.5
+Maharashtra,Green Gram,Kharif,Shallow/Murum,736.2,30.1,47.7,0,439.1
+Maharashtra,Sesame,Summer,Black (Regur),32.0,32.9,36.1,0,312.6
+Maharashtra,Rabi Jowar,Rabi,Black (Regur),42.6,21.1,73.3,0,1020.3
+Maharashtra,Maize,Kharif,Medium Black,849.0,29.5,120.0,0,2130.7
+Maharashtra,Chickpea,Rabi,Medium Black,26.8,23.1,67.2,1,1399.1
+Maharashtra,Sesame,Summer,Shallow/Murum,49.0,33.8,35.5,0,239.4
+Maharashtra,Jowar,Kharif,Shallow/Murum,932.4,27.0,61.0,0,724.8
+Maharashtra,Black Gram,Kharif,Medium Black,671.8,27.0,36.5,0,433.4
+Maharashtra,Jowar,Kharif,Black (Regur),714.4,29.8,79.0,0,1426.8
+Maharashtra,Black Gram,Kharif,Medium Black,762.8,28.5,25.6,0,403.5
+Maharashtra,Green Gram,Kharif,Medium Black,691.2,32.0,23.6,0,420.2
+Maharashtra,Soybean,Kharif,Shallow/Murum,996.2,28.1,109.4,0,725.7
+Maharashtra,Sesame,Summer,Shallow/Murum,35.4,30.7,36.0,0,204.2
+Maharashtra,Jowar,Kharif,Medium Black,642.4,30.9,99.1,0,1272.3
+Maharashtra,Rabi Jowar,Rabi,Black (Regur),35.0,24.5,75.0,0,989.7
+Maharashtra,Rabi Jowar,Rabi,Medium Black,40.3,24.2,71.6,0,915.8
+Maharashtra,Maize,Kharif,Black (Regur),947.4,27.4,156.5,0,2248.4
+Maharashtra,Sesame,Summer,Shallow/Murum,11.3,33.3,41.1,0,246.6
+Maharashtra,Sesame,Summer,Shallow/Murum,38.2,35.0,30.9,0,188.9
+Maharashtra,Tur,Kharif,Black (Regur),1025.5,29.3,88.8,0,815.0
+Maharashtra,Black Gram,Kharif,Medium Black,747.5,26.5,30.4,0,427.6
+Maharashtra,Soybean,Kharif,Black (Regur),1024.4,27.3,81.2,0,1015.6
+Maharashtra,Wheat,Rabi,Black (Regur),33.3,19.7,150.9,0,1733.5
+Maharashtra,Cotton,Kharif,Black (Regur),869.6,30.0,113.8,1,553.5
+Maharashtra,Wheat,Rabi,Medium Black,72.2,21.9,146.7,0,1411.9
+Maharashtra,Wheat,Rabi,Medium Black,87.5,19.4,128.7,0,1456.7
+Maharashtra,Green Gram,Kharif,Medium Black,822.0,31.7,26.2,0,380.6
+Maharashtra,Maize,Kharif,Medium Black,908.2,29.5,103.2,0,1722.7
+Maharashtra,Black Gram,Kharif,Black (Regur),612.0,28.6,29.7,0,377.4
+Maharashtra,Chickpea,Rabi,Black (Regur),58.0,20.2,62.4,1,1355.3
+Maharashtra,Tur,Kharif,Black (Regur),736.0,28.9,84.2,0,767.0
+Maharashtra,Rabi Jowar,Rabi,Black (Regur),51.6,26.8,72.7,0,1021.9
+Maharashtra,Green Gram,Kharif,Black (Regur),816.0,28.9,42.7,0,536.6
+Maharashtra,Soybean,Kharif,Black (Regur),1086.3,25.4,69.3,0,825.6
+Maharashtra,Green Gram,Kharif,Medium Black,691.9,29.5,34.2,0,450.0
+Maharashtra,Jowar,Kharif,Sandy Loam,804.4,29.5,102.8,0,1357.6
+Maharashtra,Green Gram,Kharif,Black (Regur),653.8,26.1,36.0,0,445.2
+Maharashtra,Groundnut,Summer,Medium Black,40.7,31.4,42.5,0,831.6
+Maharashtra,Soybean,Kharif,Medium Black,846.8,25.0,98.6,0,927.2
+Maharashtra,Rabi Jowar,Rabi,Medium Black,20.3,20.6,50.2,0,809.0
+Maharashtra,Wheat,Rabi,Shallow/Murum,27.0,23.1,132.7,0,1077.8
+Maharashtra,Black Gram,Kharif,Black (Regur),761.6,28.1,36.6,0,505.5
+Maharashtra,Cotton,Kharif,Medium Black,777.7,27.9,96.8,1,534.3
+Maharashtra,Tur,Kharif,Shallow/Murum,934.7,26.8,43.5,0,444.3
+Maharashtra,Maize,Kharif,Sandy Loam,766.4,25.3,157.7,0,1826.1
+Maharashtra,Chickpea,Rabi,Black (Regur),75.3,25.2,57.3,0,810.1
+Maharashtra,Sesame,Summer,Sandy Loam,20.8,32.1,31.5,0,232.3
+Maharashtra,Jowar,Kharif,Medium Black,729.7,28.5,77.1,0,1357.4
+Maharashtra,Chickpea,Rabi,Shallow/Murum,68.9,21.4,44.4,1,842.4
+Maharashtra,Rabi Jowar,Rabi,Black (Regur),32.9,26.6,59.5,0,828.8
+Maharashtra,Maize,Kharif,Black (Regur),961.3,28.1,116.9,0,1788.9
+Maharashtra,Rabi Jowar,Rabi,Black (Regur),41.0,26.8,67.9,0,912.0
+Maharashtra,Rabi Jowar,Rabi,Black (Regur),76.8,26.9,58.5,0,832.1
+Maharashtra,Black Gram,Kharif,Sandy Loam,844.1,29.3,33.6,0,338.1
+Maharashtra,Soybean,Kharif,Black (Regur),1076.6,29.4,104.0,0,924.4
+Maharashtra,Green Gram,Kharif,Medium Black,778.1,27.7,26.9,0,447.7
+Maharashtra,Rabi Jowar,Rabi,Sandy Loam,70.4,24.5,71.7,0,710.3
+Maharashtra,Cotton,Kharif,Black (Regur),736.3,28.8,101.0,0,411.2
+Maharashtra,Wheat,Rabi,Black (Regur),37.5,20.0,139.7,1,2428.5
+Maharashtra,Tur,Kharif,Medium Black,839.9,29.9,66.8,0,653.1
+Maharashtra,Sesame,Summer,Black (Regur),28.5,33.4,39.6,0,315.7
+Maharashtra,Black Gram,Kharif,Black (Regur),832.7,26.3,42.3,0,504.6
+Maharashtra,Wheat,Rabi,Black (Regur),27.6,24.1,122.1,0,1481.6
+Maharashtra,Chickpea,Rabi,Black (Regur),75.7,25.0,48.0,1,1241.1
+Maharashtra,Groundnut,Summer,Medium Black,56.2,33.1,54.0,0,928.3
+Maharashtra,Tur,Kharif,Medium Black,1015.4,29.0,48.5,1,760.8
+Maharashtra,Groundnut,Summer,Black (Regur),33.5,33.8,59.4,1,1743.7
+Maharashtra,Maize,Kharif,Black (Regur),840.8,29.8,123.7,0,2327.0
+Maharashtra,Cotton,Kharif,Shallow/Murum,866.5,30.3,126.2,0,288.9
+Maharashtra,Maize,Kharif,Medium Black,775.0,29.2,113.9,0,1846.3
+Maharashtra,Wheat,Rabi,Shallow/Murum,29.5,21.7,140.2,0,1252.8
+Maharashtra,Chickpea,Rabi,Shallow/Murum,40.6,24.3,55.1,1,877.7
+Maharashtra,Sesame,Summer,Medium Black,22.4,35.2,34.8,0,270.9
+Maharashtra,Sesame,Summer,Medium Black,34.9,33.8,38.7,0,319.5
+Maharashtra,Chickpea,Rabi,Black (Regur),42.2,24.3,63.3,0,754.8
+Maharashtra,Jowar,Kharif,Black (Regur),680.9,29.5,95.3,0,1317.1
+Maharashtra,Black Gram,Kharif,Shallow/Murum,715.8,30.0,44.6,0,415.2
+Maharashtra,Green Gram,Kharif,Medium Black,747.2,30.8,22.8,0,399.6
+Maharashtra,Soybean,Kharif,Black (Regur),796.3,29.7,88.6,0,987.8
+Maharashtra,Groundnut,Summer,Medium Black,44.8,33.8,54.3,1,1810.1
+Maharashtra,Jowar,Kharif,Medium Black,741.5,26.8,83.4,0,1235.9
+Maharashtra,Jowar,Kharif,Medium Black,935.4,28.0,95.8,0,1141.4
+Maharashtra,Cotton,Kharif,Sandy Loam,767.8,26.5,87.7,0,304.5
+Maharashtra,Chickpea,Rabi,Black (Regur),20.5,24.5,45.3,0,714.2
+Maharashtra,Green Gram,Kharif,Medium Black,647.1,27.0,22.3,0,334.5
+Maharashtra,Sesame,Summer,Medium Black,50.2,34.1,38.9,0,268.4
+Maharashtra,Groundnut,Summer,Black (Regur),12.4,32.5,53.8,0,1003.3
+Maharashtra,Maize,Kharif,Medium Black,836.4,28.4,147.1,0,2459.5
+Maharashtra,Maize,Kharif,Shallow/Murum,955.7,29.3,126.6,1,2057.7
+Maharashtra,Sesame,Summer,Black (Regur),26.1,34.3,40.4,0,348.8
+Maharashtra,Jowar,Kharif,Black (Regur),676.8,28.2,61.5,0,1123.9
+Maharashtra,Maize,Kharif,Medium Black,782.3,27.8,148.0,0,1974.5
+Maharashtra,Maize,Kharif,Medium Black,919.7,25.5,120.7,0,1800.0
+Maharashtra,Tur,Kharif,Medium Black,701.9,28.8,78.5,1,862.3
+Maharashtra,Groundnut,Summer,Medium Black,51.1,33.3,39.6,1,1532.4
+Maharashtra,Jowar,Kharif,Medium Black,868.0,28.6,91.3,0,1253.9
+Maharashtra,Rabi Jowar,Rabi,Black (Regur),24.6,25.9,44.0,0,816.4
+Maharashtra,Groundnut,Summer,Shallow/Murum,27.6,36.0,38.2,0,731.2
+Maharashtra,Rabi Jowar,Rabi,Black (Regur),70.8,26.0,51.4,0,866.6
+Maharashtra,Maize,Kharif,Black (Regur),988.9,25.7,167.7,0,2395.7
+Maharashtra,Tur,Kharif,Medium Black,920.4,26.0,74.8,0,695.6
+Maharashtra,Cotton,Kharif,Sandy Loam,954.7,27.5,131.1,0,303.7
+Maharashtra,Cotton,Kharif,Shallow/Murum,694.9,28.4,124.0,1,415.0
+Maharashtra,Cotton,Kharif,Shallow/Murum,838.8,29.9,122.4,1,419.9
+Maharashtra,Groundnut,Summer,Black (Regur),12.2,33.3,54.4,1,1949.2
+Maharashtra,Sesame,Summer,Medium Black,54.1,34.4,52.9,0,328.1
+Maharashtra,Groundnut,Summer,Black (Regur),49.0,35.2,40.0,1,1560.8
+Maharashtra,Green Gram,Kharif,Black (Regur),855.5,31.0,22.6,0,429.9
+Maharashtra,Tur,Kharif,Medium Black,980.5,28.3,89.4,0,810.8
+Maharashtra,Wheat,Rabi,Medium Black,86.2,19.3,147.0,0,1540.3
+Maharashtra,Maize,Kharif,Sandy Loam,732.5,26.2,101.8,0,1438.5
+Maharashtra,Wheat,Rabi,Medium Black,62.4,19.6,142.1,0,1544.4
+Maharashtra,Chickpea,Rabi,Black (Regur),40.4,20.0,66.1,0,827.6
+Maharashtra,Soybean,Kharif,Shallow/Murum,943.1,27.1,60.5,1,920.3
+Maharashtra,Tur,Kharif,Sandy Loam,915.4,26.5,67.4,1,785.1
+Maharashtra,Tur,Kharif,Shallow/Murum,809.8,28.0,65.6,0,534.9
+Maharashtra,Black Gram,Kharif,Sandy Loam,752.5,31.3,45.9,0,422.5
+Maharashtra,Sesame,Summer,Medium Black,55.5,30.3,33.7,0,257.9
+Maharashtra,Rabi Jowar,Rabi,Shallow/Murum,60.2,25.8,69.6,0,704.4
+Maharashtra,Groundnut,Summer,Medium Black,24.7,30.3,36.0,1,1551.9
+Maharashtra,Wheat,Rabi,Sandy Loam,62.0,21.1,134.7,1,2166.1
+Maharashtra,Soybean,Kharif,Medium Black,1011.8,25.3,89.2,0,978.7
+Maharashtra,Black Gram,Kharif,Medium Black,696.5,27.1,40.9,0,468.3
+Maharashtra,Sesame,Summer,Shallow/Murum,52.3,31.5,49.1,0,254.4
+Maharashtra,Wheat,Rabi,Shallow/Murum,36.7,20.9,110.5,1,1747.3
+Maharashtra,Jowar,Kharif,Shallow/Murum,752.4,29.7,108.3,0,1147.8
+Maharashtra,Sesame,Summer,Medium Black,38.8,33.9,53.0,0,331.8
+Maharashtra,Sesame,Summer,Black (Regur),45.9,34.4,55.8,0,407.7
+Maharashtra,Soybean,Kharif,Black (Regur),955.9,26.2,71.0,1,1291.3
+Maharashtra,Chickpea,Rabi,Medium Black,46.5,21.6,62.6,1,1265.4
